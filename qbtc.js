@@ -1,4 +1,4 @@
-// Datos de las preguntas y respuestas sobre Bitcoin
+// Declarar bitcoinFAQData primero (ámbito global)
 const bitcoinFAQData = [
   {
     question: "¿Qué es Bitcoin?",
@@ -95,7 +95,8 @@ const bitcoinFAQData = [
   {
     question: "¿Qué es la adopción institucional de Bitcoin?",
     answer: "La <strong>adopción institucional</strong> se refiere a la participación de grandes empresas, fondos de inversión y bancos en el mercado de Bitcoin. Esto incluye la compra de Bitcoin como reserva de valor, la creación de productos financieros basados en Bitcoin, y la integración de servicios relacionados con criptomonedas."
-  }
+  },
+  // ... más preguntas y respuestas
 ];
 
 // Función para mostrar el modal con las preguntas y respuestas
@@ -123,16 +124,9 @@ function showBitcoinFAQModal() {
     faqContainer.appendChild(faqSection);
   });
 
-  // Mostrar el modal
+  // Mostrar el modal y el overlay
   modal.style.display = 'block';
   document.getElementById('overlay').style.display = 'block';
-}
-
-// Función para cerrar el modal
-function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  modal.style.display = 'none';
-  document.getElementById('overlay').style.display = 'none';
 }
 
 // Asignar la función al botón que abre el modal

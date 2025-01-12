@@ -1,7 +1,5 @@
-// glossary.js
-
 const glossaryTerms = [
-  // A
+    // A
   {
     term: "Airdrop",
     definition: "Distribución gratuita de tokens o criptomonedas a los titulares de una billetera específica."
@@ -508,6 +506,8 @@ const glossaryTerms = [
 
 function loadGlossary() {
   const glossaryContainer = document.getElementById('glossaryContainer');
+  glossaryContainer.innerHTML = ''; // Limpiar el contenedor antes de cargar los términos
+
   glossaryTerms.sort((a, b) => a.term.localeCompare(b.term)).forEach(term => {
     const termElement = document.createElement('div');
     termElement.className = 'glossary-term';
@@ -517,20 +517,6 @@ function loadGlossary() {
     `;
     glossaryContainer.appendChild(termElement);
   });
-}
-
-function showGlossaryModal() {
-  const modal = document.getElementById('glossaryModal');
-  const overlay = document.getElementById('overlay');
-  modal.style.display = 'block';
-  overlay.style.display = 'block';
-}
-
-function closeModal(modalId) {
-  const modal = document.getElementById(modalId);
-  const overlay = document.getElementById('overlay');
-  modal.style.display = 'none';
-  overlay.style.display = 'none';
 }
 
 function filterGlossary() {
@@ -547,4 +533,18 @@ function filterGlossary() {
   });
 }
 
-document.addEventListener('DOMContentLoaded', loadGlossary);
+function showGlossaryModal() {
+  const modal = document.getElementById('glossaryModal');
+  const overlay = document.getElementById('overlay');
+  modal.style.display = 'block';
+  overlay.style.display = 'block';
+
+  // Cargar los términos del glosario al abrir el modal
+  loadGlossary();
+}
+
+// Cargar el glosario cuando el DOM esté listo
+document.addEventListener('DOMContentLoaded', () => {
+  // Si deseas cargar el glosario automáticamente al cargar la página, descomenta la siguiente línea:
+  // loadGlossary();
+});
