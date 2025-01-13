@@ -1,55 +1,186 @@
+/* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
     margin: 0;
     padding: 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
 .container {
-    background-color: #fff;
+    background-color: #1e1e1e; /* Fondo del contenedor */
     padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 300px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 90%;
+    max-width: 800px;
     text-align: center;
+    margin: 20px;
 }
 
-h1 {
-    font-size: 24px;
+/* Encabezado */
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.header .subtitle {
+    font-size: 16px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 10px;
+}
+
+.header .version {
+    font-size: 14px;
+    color: #888; /* Texto gris */
+    font-weight: 500;
     margin-bottom: 20px;
 }
 
+/* Contenido principal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.download-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.download-section .description {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 20px;
+}
+
+.preview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #333; /* Borde para la imagen */
+}
+
+/* Botón de descarga */
 .download-link {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #007bff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #007bff; /* Azul brillante */
     color: #fff;
     text-decoration: none;
-    border-radius: 4px;
-    pointer-events: auto; /* Habilita el clic */
-    opacity: 1; /* Hace que el botón se vea habilitado */
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.download-link i {
+    margin-right: 10px;
 }
 
 .download-link:hover {
-    background-color: #0056b3;
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
 }
 
+/* Verificación de seguridad */
+.hash-info {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #b0b0b0; /* Texto gris claro */
+}
+
+.hash-info h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.hash-info code {
+    background-color: #333; /* Fondo oscuro para los códigos */
+    color: #e0e0e0; /* Texto claro */
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    margin: 5px 0;
+    word-wrap: break-word;
+}
+
+/* Información de contacto */
 .contact-info {
     margin-top: 20px;
-    font-size: 14px;
-    color: #555;
+}
+
+.contact-info h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
 }
 
 .contact-link {
-    color: #007bff;
+    color: #007bff; /* Azul brillante */
     text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-link i {
+    margin-right: 10px;
 }
 
 .contact-link:hover {
     text-decoration: underline;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header .subtitle {
+        font-size: 14px;
+    }
+
+    .header .version {
+        font-size: 12px;
+    }
+
+    .download-section h2 {
+        font-size: 20px;
+    }
+
+    .download-section .description {
+        font-size: 13px;
+    }
+
+    .download-link {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .hash-info {
+        font-size: 11px;
+    }
+
+    .hash-info h3 {
+        font-size: 14px;
+    }
+
+    .contact-info h3 {
+        font-size: 14px;
+    }
 }
