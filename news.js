@@ -1,13 +1,31 @@
 // news.js
 
+const fetchWithFallback = async (url) => {
+  const services = [
+    `https://api.allorigins.win/get?url=${encodeURIComponent(url)}`,
+    `https://corsproxy.io/?url=${encodeURIComponent(url)}`
+  ];
+
+  for (let service of services) {
+    try {
+      const response = await fetch(service, { cache: 'no-cache' });
+      if (response.ok) {
+        console.log(`Usando servicio: ${service}`);
+        return await response.json();
+      }
+    } catch (error) {
+      console.error(`Error con el servicio ${service}:`, error);
+    }
+  }
+  throw new Error('Todos los servicios fallaron');
+};
+
 const loadNews = async () => {
   const newsContainer = document.getElementById('newsContainer');
   newsContainer.innerHTML = '<p>Cargando noticias...</p>';
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
-    const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
-    const response = await fetch(allOriginsUrl);
-    const data = await response.json();
+    const data = await fetchWithFallback(rssUrl);
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(data.contents, "text/xml");
     const items = xmlDoc.querySelectorAll("item");
@@ -40,7 +58,7 @@ const loadAppNews = async () => {
   const appNewsContainer = document.getElementById('appNewsContainer');
   appNewsContainer.innerHTML = '<p>Cargando noticias...</p>';
   try {
-    const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json');
+    const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json', { cache: 'no-cache' });
     const text = await response.text();
     const messages = eval(text);
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
