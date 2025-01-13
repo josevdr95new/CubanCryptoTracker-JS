@@ -20,12 +20,6 @@
     {
         "fecha": "2025-01-13",
         "img": null,
-        "descripcion": "Se presentan problemas con api.allorigins.win (Status code: 522), la app no funcionará por ahora",
-        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
-    },
-    {
-        "fecha": "2025-01-13",
-        "img": null,
         "descripcion": "Se restableció el servicio con api.allorigins.win, la app vuelve a funcionar",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     }
