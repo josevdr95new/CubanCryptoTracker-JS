@@ -41,7 +41,7 @@ const contactModalContent = `
 const aboutModalContent = `
   <button class="modal-close" onclick="closeModal('aboutModal')"><i class="bi bi-x"></i></button>
   <h2>Acerca de CubanCrypto-Tracker</h2>
-  <p><strong>Versión:</strong> BETA v1.0 2025</p>
+  <p><strong>Versión:</strong> v1.0 2025</p>
   <p><strong>Autor:</strong> josevdr95</p>
   <p>Esta aplicación es solo informativa y no ofrece recomendaciones de inversión. Los datos proporcionados se obtienen de APIs públicas como CoinGecko y QvaPay.</p>
   <p><strong>Nota:</strong> El valor de USDT/CUP se basa en el mercado informal cubano y puede variar según las condiciones del mercado.</p>
