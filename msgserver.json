@@ -15,12 +15,12 @@
         "fecha": "2025-01-13",
         "img": null,
         "descripcion": "Beta Testing CubanCrypto Tracker activado.",
-        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/",
+        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     },
     {
         "fecha": "2025-01-13",
         "img": null,
-        "descripcion": "Se presentan problemas con "api.allorigins.win" la app no funcionara por ahora"
+        "descripcion": "Se presentan problemas con api.allorigins.win, la app no funcionará por ahora.",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     }
 ]
