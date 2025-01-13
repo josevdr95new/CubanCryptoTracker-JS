@@ -1,14 +1,20 @@
 [
     {
-        "fecha": "2025-08-08",
+        "fecha": "2025-01-08",
         "img": null,
         "descripcion": "Gracias por instalar y probar CubanCrypto-Tracker",
         "enlace": null
     },
     {
-        "fecha": "2025-08-09",
+        "fecha": "2025-01-09",
         "img": null,
         "descripcion": "Los datos mostrados solo son informativos",
         "enlace": null
+    },
+    {
+        "fecha": "2025-01-13",
+        "img": null,
+        "descripcion": "Beta Testing CubanCrypto Tracker activado.",
+        "enlace": https://josevdr95new.github.io/CubanCryptoTracker-JS/
     }
 ]
