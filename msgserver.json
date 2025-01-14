@@ -1,26 +1,8 @@
 [
     {
-        "fecha": "2025-01-08",
+        "fecha": "2025-01-14",  // Ajusta esta fecha según la fecha actual
         "img": null,
-        "descripcion": "Gracias por instalar y probar CubanCrypto-Tracker",
-        "enlace": null
-    },
-    {
-        "fecha": "2025-01-09",
-        "img": null,
-        "descripcion": "Los datos mostrados solo son informativos",
-        "enlace": null
-    },
-    {
-        "fecha": "2025-01-12",
-        "img": null,
-        "descripcion": "Beta Testing CubanCrypto Tracker activado.",
-        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
-    },
-    {
-        "fecha": "2025-01-13",
-        "img": null,
-        "descripcion": "Se restableció el servicio con api.allorigins.win, la app vuelve a funcionar",
+        "descripcion": "¡Nueva actualización disponible! La versión BETA 0.2 estará lista para descargar a partir de las 00:00 UTC. La versión anterior (BETA 0.1) dejará de funcionar. Por favor, actualiza para continuar usando CubanCrypto-Tracker.",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     }
 ]

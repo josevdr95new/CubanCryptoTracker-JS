@@ -14,11 +14,19 @@
         <header class="header">
             <h1>CubanCrypto Tracker</h1>
             <p class="subtitle">La mejor herramienta para rastrear criptomonedas en Cuba.</p>
-            <p class="version">Versión BETA v1.0 2025</p>
+            <p class="version">Versión BETA v0.1 2025</p>
         </header>
 
         <!-- Contenido principal -->
         <main class="main-content">
+            <!-- Sección de actualización -->
+            <div class="update-section">
+                <h2>Últimas Actualizaciones</h2>
+                <div id="update-info">
+                    <p>Cargando información de actualización...</p>
+                </div>
+            </div>
+
             <div class="download-section">
                 <h2>Descarga la aplicación</h2>
                 <p class="description">
@@ -28,7 +36,7 @@
                     <img src="01.png" alt="Vista previa de la APK">
                 </div>
                 <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/CubanCrypto_Tracker.apk" download class="download-link">
-                    <i class="fas fa-download"></i> Descargar APK (4.15MB)
+                    <i class="fas fa-download"></i> Descargar APK (4.15MB) - BETA v0.1
                 </a>
             </div>
 
@@ -49,5 +57,40 @@
             </div>
         </main>
     </div>
+
+    <script>
+        // Función para cargar los datos del JSON
+        function loadUpdateInfo() {
+            const updateInfoElement = document.getElementById('update-info');
+            const url = 'https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json';
+
+            fetch(url)
+                .then(response => response.json())
+                .then(data => {
+                    // Limpiar el contenido actual
+                    updateInfoElement.innerHTML = '';
+
+                    // Iterar sobre todos los mensajes del JSON
+                    data.forEach((update, index) => {
+                        const updateDiv = document.createElement('div');
+                        updateDiv.classList.add('update-item');
+                        updateDiv.innerHTML = `
+                            <p><strong>Fecha:</strong> ${update.fecha}</p>
+                            <p><strong>Descripción:</strong> ${update.descripcion}</p>
+                            ${update.enlace ? `<p><strong>Enlace:</strong> <a href="${update.enlace}" target="_blank">${update.enlace}</a></p>` : ''}
+                            ${index < data.length - 1 ? '<hr>' : ''} <!-- Separador entre mensajes -->
+                        `;
+                        updateInfoElement.appendChild(updateDiv);
+                    });
+                })
+                .catch(error => {
+                    updateInfoElement.innerHTML = `<p>Error al cargar la información de actualización.</p>`;
+                    console.error('Error:', error);
+                });
+        }
+
+        // Cargar la información al cargar la página
+        document.addEventListener('DOMContentLoaded', loadUpdateInfo);
+    </script>
 </body>
 </html>
