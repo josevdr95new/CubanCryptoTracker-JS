@@ -24,6 +24,17 @@
             "fechaPublicacion": "2025-01-09"
         }
     ],
-    "faucet": [],
+    "faucet": [
+        {
+            "nombre": "Waxta",
+            "descripcion": "Waxta es un faucet que permite ganar criptomonedas gratis con mínimos de retiro muy bajos. Ofrece varias formas de ganar, como viendo anuncios, minando y más. Además, permite retiros a FaucetPay.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "Sí",
+            "enlace": "https://waxta.com/i/70395",
+            "imagen": "https://waxta.com/img/logo.png",
+            "fechaPublicacion": "2025-01-14"
+        }
+    ],
     "otros": []
 }
