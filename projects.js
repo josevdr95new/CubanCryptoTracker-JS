@@ -1,6 +1,21 @@
 // projects.js
 
-let projectsData = null;
+window.projectsData = null;
+
+window.loadProjects = async () => {
+  const projectsContainer = document.getElementById('projectsContainer');
+  projectsContainer.innerHTML = '<p>Cargando proyectos...</p>';
+  try {
+    const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/proyetos.json');
+    if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
+    window.projectsData = await response.json();
+    projectsContainer.innerHTML = '';
+    filterProjects();
+  } catch (error) {
+    console.error('Error cargando proyectos:', error);
+    projectsContainer.innerHTML = '<p>Error al cargar los proyectos.</p>';
+  }
+};
 
 const createProjectCard = (project, container) => {
   const projectCard = document.createElement('div');
@@ -14,52 +29,41 @@ const createProjectCard = (project, container) => {
       <p><strong>Pago:</strong> ${project.pago}</p>
       <p><strong>Gratis:</strong> ${project.gratis}</p>
       <p><strong>Fecha de publicación:</strong> ${project.fechaPublicacion}</p>
-      <a href="#" onclick="showWarningModal('${project.enlace}')" class="project-link">Visitar proyecto</a>
+      <a href="#" onclick="handleProjectLinkClick('${project.enlace}')" class="project-link">Visitar proyecto</a>
     </div>
   `;
   container.appendChild(projectCard);
 };
 
-const loadProjects = async () => {
-  const projectsContainer = document.getElementById('projectsContainer');
-  projectsContainer.innerHTML = '<p>Cargando proyectos...</p>';
-  try {
-    const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/proyetos.json');
-    if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
-    projectsData = await response.json();
-    projectsContainer.innerHTML = '';
-    filterProjects();
-  } catch (error) {
-    console.error('Error cargando proyectos:', error);
-    projectsContainer.innerHTML = '<p>Error al cargar los proyectos.</p>';
-  }
-};
-
 const filterProjects = () => {
-  if (!projectsData) {
+  if (!window.projectsData) {
     console.error("Los datos de los proyectos no están disponibles.");
     return;
   }
+
   const categoryFilter = document.getElementById('categoryFilter').value;
   const sortOrder = document.getElementById('sortOrder').value;
   const projectsContainer = document.getElementById('projectsContainer');
   projectsContainer.innerHTML = '';
+
   let filteredProjects = [];
   if (categoryFilter === 'all') {
-    for (const category in projectsData) {
-      if (Array.isArray(projectsData[category]) && projectsData[category].length > 0) {
-        filteredProjects = filteredProjects.concat(projectsData[category]);
+    for (const category in window.projectsData) {
+      if (Array.isArray(window.projectsData[category]) && window.projectsData[category].length > 0) {
+        filteredProjects = filteredProjects.concat(window.projectsData[category]);
       }
     }
   } else {
-    if (Array.isArray(projectsData[categoryFilter]) && projectsData[categoryFilter].length > 0) {
-      filteredProjects = projectsData[categoryFilter];
+    if (Array.isArray(window.projectsData[categoryFilter]) && window.projectsData[categoryFilter].length > 0) {
+      filteredProjects = window.projectsData[categoryFilter];
     } else {
       projectsContainer.innerHTML = '<p>No hay proyectos en esta categoría.</p>';
       return;
     }
   }
+
   sortProjects(filteredProjects, sortOrder);
+
   if (filteredProjects.length > 0) {
     const categoryTitle = document.createElement('h3');
     categoryTitle.textContent = categoryFilter === 'all' ? 'Todos los proyectos' : categoryFilter.toUpperCase();
@@ -90,5 +94,5 @@ const rejectProjectsDisclaimer = () => {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
-  loadProjects();
+  window.loadProjects();
 });

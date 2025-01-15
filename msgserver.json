@@ -2,7 +2,7 @@
     {
         "fecha": "2025-01-14",  // Ajusta esta fecha según la fecha actual
         "img": null,
-        "descripcion": "¡Nueva actualización disponible! La versión BETA 0.2 estará lista para descargar a partir de las 00:00 UTC. La versión anterior (BETA 0.1) dejará de funcionar. Por favor, actualiza para continuar usando CubanCrypto-Tracker.",
+        "descripcion": "¡Nueva actualización disponible! La versión BETA 0.2 está lista ya para descargar. La versión anterior (BETA 0.1) dejará de funcionar. Por favor, actualiza para continuar usando CubanCrypto-Tracker.",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     }
 ]

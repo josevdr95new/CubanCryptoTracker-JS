@@ -37,33 +37,14 @@ const contactModalContent = `
   <p>Correo: josevdr95@gmail.com<br><br>Teléfono:</p>
 `;
 
-// Contenido del modal de Acerca de
+// Contenido del modal de Acerca de (aboutModal)
 const aboutModalContent = `
   <button class="modal-close" onclick="closeModal('aboutModal')"><i class="bi bi-x"></i></button>
   <h2>Acerca de CubanCrypto-Tracker</h2>
-  <p><strong>Versión:</strong> v1.0 2025</p>
+  <p><strong>Versión:</strong> 0.2 BETA 2025</p>
   <p><strong>Autor:</strong> josevdr95</p>
   <p>Esta aplicación es solo informativa y no ofrece recomendaciones de inversión. Los datos proporcionados se obtienen de APIs públicas como CoinGecko y QvaPay.</p>
   <p><strong>Nota:</strong> El valor de USDT/CUP se basa en el mercado informal cubano y puede variar según las condiciones del mercado.</p>
-`;
-
-// Contenido de Bienvenido a CubanCrypto-Tracker
-const welcomeContent = `
-  <h2>Bienvenido a CubanCrypto-Tracker</h2>
-  <p>Sigue los precios de criptomonedas en tiempo real y obtén información relacionada.</p>
-  <div class="disclaimer-text">
-    <p><strong>Advertencia:</strong> Los datos mostrados en esta aplicación son de carácter informativo. Los precios de las criptomonedas (BTC, BNB, TRX, etc.) se obtienen de la API de <a href="https://www.coingecko.com/en/api" target="_blank" class="api-link">CoinGecko</a>. El precio de <strong>USDT/CUP</strong> se obtiene de la API de <a href="https://qvapay.com/api/p2p/completed_pairs_average?coin=BANK_CUP" target="_blank" class="api-link">QvaPay</a>. <strong>Nota:</strong> El USDT no está vinculado al USD en el contexto de Cuba. Su valor puede variar según el mercado informal.</p>
-    <p><strong>Importante:</strong> Nada en esta aplicación es una recomendación de inversión. Los datos proporcionados son únicamente informativos y no deben interpretarse como asesoramiento financiero. El creador de esta aplicación no es responsable de ninguna decisión tomada en base a la información aquí mostrada.</p>
-  </div>
-`;
-
-// Contenido de Calificación de SimpleSwap en Trustpilot
-const trustpilotContent = `
-  <p>Calificación de SimpleSwap en Trustpilot:</p>
-  <a href="https://www.trustpilot.com/review/simpleswap.io?utm_medium=trustbox&utm_source=MicroReviewCount" target="_blank">
-    <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/stars/stars-4.5.svg" alt="Trustpilot Rating" class="trustpilot-stars">
-  </a>
-  <p>El creador de CubanCrypto-Tracker no es responsable por pérdidas de fondos, problemas con el intercambio o algo parecido. Procure saber lo que hace antes de interactuar con el swap.</p>
 `;
 
 // Función para cargar el contenido de los modales
@@ -81,18 +62,6 @@ const loadModalContent = () => {
   if (contactModal) contactModal.innerHTML = contactModalContent;
   if (aboutModal) aboutModal.innerHTML = aboutModalContent;
 
-  // Cargar contenido de Bienvenido a CubanCrypto-Tracker
-  const welcomeContainer = document.querySelector('.glossary-style-card');
-  if (welcomeContainer) {
-    welcomeContainer.innerHTML = welcomeContent;
-  }
-
-  // Cargar contenido de Calificación de SimpleSwap en Trustpilot
-  const trustpilotContainer = document.querySelector('.trustpilot-rating');
-  if (trustpilotContainer) {
-    trustpilotContainer.innerHTML = trustpilotContent;
-  }
-
   // Agregar evento de escucha a los enlaces dentro de los modales
   const modals = [helpModal, disclaimerModal, infoModal, contactModal, aboutModal];
   modals.forEach(modal => {
@@ -106,26 +75,6 @@ const loadModalContent = () => {
         });
       });
     }
-  });
-
-  // Agregar evento de escucha a los enlaces en el contenido de bienvenida
-  const welcomeLinks = document.querySelectorAll('.glossary-style-card a');
-  welcomeLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-      const url = link.href;
-      window.location.href = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
-    });
-  });
-
-  // Agregar evento de escucha a los enlaces en el contenido de Trustpilot
-  const trustpilotLinks = document.querySelectorAll('.trustpilot-rating a');
-  trustpilotLinks.forEach(link => {
-    link.addEventListener('click', (event) => {
-      event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
-      const url = link.href;
-      window.location.href = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
-    });
   });
 };
 
