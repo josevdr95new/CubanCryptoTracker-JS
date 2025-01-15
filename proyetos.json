@@ -20,6 +20,16 @@
             "enlace": "https://t.me/GoblinMine_bot/start?startapp=1661848348",
             "imagen": "https://academy-public.coinmarketcap.com/optimized-uploads/9ac15813dcbc4204bd04e8745f8e67de.jpeg",
             "fechaPublicacion": "2025-01-14"
+        },
+        {
+            "nombre": "Fishbi",
+            "descripcion": "Fishbi es una plataforma similar a Goblin X que permite a los usuarios ganar criptomonedas mediante la minería de monedas virtuales. El proyecto comenzó el 12 de enero de 2025.",
+            "estado": "Activo",
+            "pago": "Desconocido",
+            "gratis": "Sí",
+            "enlace": "https://fishbi.pw/?ref=2285",
+            "imagen": "https://fishbi.pw/load/img/ind.png",
+            "fechaPublicacion": "2025-01-15"
         }
     ],
     "juegos": [
