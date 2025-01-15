@@ -13,17 +13,12 @@ const helpModalContent = `
   </ul>
 `;
 
-// Contenido del modal de Contacto
-const contactModalContent = `
-  <button class="modal-close" onclick="closeModal('contactModal')"><i class="bi bi-x"></i></button>
-  <h2>Contáctanos</h2>
-  <p>Para más información o soporte, no dudes en contactarnos:</p>
-  <ul>
-    <li><strong>Correo:</strong> <a href="mailto:CubanCrypto-Tracker@proton.me">CubanCrypto-Tracker@proton.me</a></li>
-    <li><strong>Sitio web:</strong> <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/" target="_blank">CubanCrypto-Tracker</a></li>
-  </ul>
-  <p>¿Te gustaría promocionar tu proyecto <strong>CubanCrypto-Tracker</strong>? ¡Contáctanos por correo y te ayudaremos!</p>
-  <p>¡Estamos aquí para ayudarte!</p>
+// Contenido del modal de Aviso Legal
+const disclaimerModalContent = `
+  <button class="modal-close" onclick="closeModal('disclaimerModal')"><i class="bi bi-x"></i></button>
+  <h2>Aviso Legal</h2>
+  <p>El comercio de criptomonedas implica un riesgo sustancial. Los precios pueden ser altamente volátiles y el rendimiento pasado no garantiza resultados futuros.</p>
+  <p><strong>Advertencia:</strong> Los precios mostrados en esta plataforma se obtienen de APIs públicas. Los precios de las criptomonedas (BTC, BNB, TRX, etc.) provienen de la API de <a href="https://www.coingecko.com/en/api" target="_blank" class="api-link">CoinGecko</a>. El precio de <strong>USDT/CUP</strong> se obtiene de la API de <a href="https://qvapay.com/api/p2p/completed_pairs_average?coin=BANK_CUP" target="_blank" class="api-link">QvaPay</a>. No somos responsables por la exactitud o actualización de estos datos.</p>
 `;
 
 // Contenido del modal de Información de Mercado
@@ -39,7 +34,9 @@ const infoModalContent = `
 const contactModalContent = `
   <button class="modal-close" onclick="closeModal('contactModal')"><i class="bi bi-x"></i></button>
   <h2>Contáctanos</h2>
-  <p>Correo: josevdr95@gmail.com<br><br>Teléfono:</p>
+  <h3 style="display: inline;">Promociona tu proyecto en esta app</h3>
+  <p style="display: inline;"> ¡No te lo pierdas!</p>
+  <p>Correo: CubanCrypto-Tracker@proton.me<br><br>Teléfono:</p>
 `;
 
 // Contenido del modal de Acerca de (aboutModal)
