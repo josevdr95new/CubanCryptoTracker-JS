@@ -45,6 +45,11 @@ const aboutModalContent = `
   <p><strong>Autor:</strong> josevdr95</p>
   <p>Esta aplicación es solo informativa y no ofrece recomendaciones de inversión. Los datos proporcionados se obtienen de APIs públicas como CoinGecko y QvaPay.</p>
   <p><strong>Nota:</strong> El valor de USDT/CUP se basa en el mercado informal cubano y puede variar según las condiciones del mercado.</p>
+  <p><strong>Agradecimientos especiales:</strong></p>
+  <ul>
+    <li>A @jmorenoc por su invaluable ayuda y soporte en el desarrollo de esta aplicación.</li>
+    <li>A nuestros Beta Testers por su dedicación y feedback durante la fase de pruebas.</li>
+  </ul>
 `;
 
 // Función para cargar el contenido de los modales
