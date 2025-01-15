@@ -6,11 +6,7 @@ window.loadProjects = async () => {
   const projectsContainer = document.getElementById('projectsContainer');
   projectsContainer.innerHTML = '<p>Cargando proyectos...</p>';
   try {
-    const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/proyetos.json', {
-      headers: {
-        'Cache-Control': 'no-cache'
-      }
-    });
+    const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/proyetos.json');
     if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
     window.projectsData = await response.json();
     projectsContainer.innerHTML = '';
