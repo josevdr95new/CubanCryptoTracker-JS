@@ -47,7 +47,7 @@ const aboutModalContent = `
   <p><strong>Nota:</strong> El valor de USDT/CUP se basa en el mercado informal cubano y puede variar según las condiciones del mercado.</p>
   <p><strong>Agradecimientos especiales:</strong></p>
   <ul>
-    <li>A @jmorenoc por su invaluable ayuda y soporte en el desarrollo de esta aplicación.</li>
+    <li>A <span style="font-weight: bold; color: #007bff; text-decoration: underline; font-style: italic;">@jmorenoc</span> por su invaluable ayuda y soporte en el desarrollo de esta aplicación.</li>
     <li>A nuestros Beta Testers por su dedicación y feedback durante la fase de pruebas.</li>
   </ul>
 `;
