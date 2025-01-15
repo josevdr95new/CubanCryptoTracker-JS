@@ -1,4 +1,4 @@
 {
-  "status": "offline",
-  "message": "La aplicación está en mantenimiento. Por favor, inténtelo de nuevo más tarde."
+  "status": "online",
+  "message": "Conexión exitosa. Bienvenido."
 }
