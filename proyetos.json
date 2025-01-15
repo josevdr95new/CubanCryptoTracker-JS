@@ -46,5 +46,16 @@
             "fechaPublicacion": "2025-01-14"
         }
     ],
-    "otros": []
+    "otros": [
+        {
+            "nombre": "FaucetPay",
+            "descripcion": "FaucetPay es una plataforma que permite recibir y retirar pequeñas cantidades de criptomonedas de faucets y otros servicios. Es útil para acumular fondos antes de transferirlos a una wallet principal.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "Sí",
+            "enlace": "https://faucetpay.io/?r=408239",
+            "imagen": "https://faucetpay.io/static/media/wallet.2d6239fc.webp",
+            "fechaPublicacion": "2025-01-14"
+        }
+    ]
 }
