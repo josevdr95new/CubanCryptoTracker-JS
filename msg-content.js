@@ -36,6 +36,20 @@ const contactModalContent = `
   <h2>Contáctanos</h2>
   <h8>Promociona tu proyecto en esta app !!!</h8>
   <p>Correo: CubanCrypto-Tracker@proton.me<br><br>Teléfono:</p>
+
+  <h3>Promociona en la app:</h3>
+  <ul style="list-style: none; padding: 0;">
+    <li>👥 Grupos de Facebook</li>
+    <li>📱 Grupos de WhatsApp</li>
+    <li>📢 Canales de Telegram</li>
+    <li>🚀 Proyectos</li>
+    <li>💡 Servicios/Productos</li>
+    <li>₿ Criptomonedas</li>
+  </ul>
+
+  <p><strong>Nota:</strong> El creador de CubanCrypto-Tracker no es responsable por la revisión, interacción o los datos que los usuarios promocionen en la app. Los usuarios interactúan y comparten información bajo su propia responsabilidad.</p>
+
+  <p>¡No dudes en contactarnos para más información o para promocionar tu proyecto!</p>
 `;
 
 // Contenido del modal de Acerca de (aboutModal)
