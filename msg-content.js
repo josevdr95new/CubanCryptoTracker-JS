@@ -34,8 +34,7 @@ const infoModalContent = `
 const contactModalContent = `
   <button class="modal-close" onclick="closeModal('contactModal')"><i class="bi bi-x"></i></button>
   <h2>Contáctanos</h2>
-  <h3 style="display: inline;">Promociona tu proyecto en esta app</h3>
-  <p style="display: inline;"> ¡No te lo pierdas!</p>
+  <h8>Procomociona tu proyecto en esta app !!!</h8>
   <p>Correo: CubanCrypto-Tracker@proton.me<br><br>Teléfono:</p>
 `;
 
