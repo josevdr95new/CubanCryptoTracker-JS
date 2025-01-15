@@ -10,6 +10,16 @@
             "enlace": "https://t.me/cBot/GenkiMiner?startapp=RfO_RalS",
             "imagen": "https://www.findmini.app/_astro/e7_r_bd_ho_400x400_aNraD02FQj_Z2mwenL.webp",
             "fechaPublicacion": "2025-01-10"
+        },
+        {
+            "nombre": "Goblin Mine",
+            "descripcion": "El bot Goblin Mine en Telegram permite a los usuarios ganar criptomonedas TON mediante la minería de monedas virtuales. Los jugadores pueden mejorar sus minas y aumentar su producción diaria para alcanzar recompensas significativas.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "No",
+            "enlace": "https://t.me/GoblinMine_bot/start?startapp=1661848348",
+            "imagen": "https://academy-public.coinmarketcap.com/optimized-uploads/9ac15813dcbc4204bd04e8745f8e67de.jpeg",
+            "fechaPublicacion": "2025-01-14"
         }
     ],
     "juegos": [
