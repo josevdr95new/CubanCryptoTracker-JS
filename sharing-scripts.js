@@ -6,6 +6,6 @@ document.getElementById('share-button').addEventListener('click', () => {
 });
 
 document.getElementById('send-email-button').addEventListener('click', () => {
-    const emailIntent = "intent://send?to=josevdr95@gmail.com#Intent;scheme=mailto;package=com.google.android.gm;end";
+    const emailIntent = "intent://send?to=CubanCrypto-Tracker@proton.me#Intent;scheme=mailto;package=com.google.android.gm;end";
     window.location.href = emailIntent;
 });
