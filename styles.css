@@ -145,6 +145,33 @@ body {
     background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
 }
 
+/* Estilos para la cantidad de descargas */
+.download-count {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.download-count i {
+    color: #007bff; /* Icono azul brillante */
+    font-size: 16px;
+}
+
+.download-count span {
+    font-weight: 500;
+    color: #ffffff; /* Texto blanco */
+}
+
 /* Enlace adicional de descarga */
 .additional-download {
     margin-top: 20px;
@@ -257,6 +284,11 @@ body {
     .download-link {
         font-size: 14px;
         padding: 10px 15px;
+    }
+
+    .download-count {
+        font-size: 12px;
+        padding: 6px 10px;
     }
 
     .hash-info {
