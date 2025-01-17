@@ -30,9 +30,6 @@ const infoModalContent = `
   <p><strong>Cálculo de precios de criptomonedas en CUP:</strong> Los precios de las criptomonedas en CUP se calculan utilizando el valor de <strong>USDT/CUP</strong> como referencia. Por ejemplo, si el precio de BTC/USDT es $30,000 y el valor de USDT/CUP es 120 CUP, entonces el precio de BTC/CUP sería 30,000 * 120 = 3,600,000 CUP.</p>
 `;
 
-
-
-
 // Contenido del modal de Contacto
 const contactModalContent = `
   <button class="modal-close" onclick="closeModal('contactModal')"><i class="bi bi-x"></i></button>
@@ -54,9 +51,6 @@ const contactModalContent = `
 
   <p>¡No dudes en contactarnos para más información o para promocionar tu proyecto!</p>
 `;
-
-
-
 
 // Contenido del modal de Acerca de (aboutModal)
 const aboutModalContent = `
@@ -87,11 +81,24 @@ const loadModalContent = () => {
   if (contactModal) contactModal.innerHTML = contactModalContent;
   if (aboutModal) aboutModal.innerHTML = aboutModalContent;
 
-  // Agregar evento de escucha a los enlaces dentro de los modales
+  // Agregar evento de escucha al enlace de correo electrónico
+  const emailLink = document.querySelector('a[href^="mailto:"]');
+  if (emailLink) {
+    emailLink.addEventListener('click', (event) => {
+      event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
+      const email = emailLink.href.replace('mailto:', '');
+
+      // Intentar abrir el intent de Gmail
+      const intentUrl = `intent://send?to=${email}#Intent;scheme=mailto;package=com.google.android.gm;end`;
+      window.location.href = intentUrl;
+    });
+  }
+
+  // Agregar evento de escucha a los demás enlaces dentro de los modales
   const modals = [helpModal, disclaimerModal, infoModal, contactModal, aboutModal];
   modals.forEach(modal => {
     if (modal) {
-      const links = modal.querySelectorAll('a');
+      const links = modal.querySelectorAll('a:not([href^="mailto:"])');
       links.forEach(link => {
         link.addEventListener('click', (event) => {
           event.preventDefault(); // Evitar el comportamiento predeterminado del enlace
