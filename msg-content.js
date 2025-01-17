@@ -30,45 +30,33 @@ const infoModalContent = `
   <p><strong>Cálculo de precios de criptomonedas en CUP:</strong> Los precios de las criptomonedas en CUP se calculan utilizando el valor de <strong>USDT/CUP</strong> como referencia. Por ejemplo, si el precio de BTC/USDT es $30,000 y el valor de USDT/CUP es 120 CUP, entonces el precio de BTC/CUP sería 30,000 * 120 = 3,600,000 CUP.</p>
 `;
 
+
+
+
 // Contenido del modal de Contacto
 const contactModalContent = `
   <button class="modal-close" onclick="closeModal('contactModal')"><i class="bi bi-x"></i></button>
   <h2>Contáctanos</h2>
   <h8>Promociona tu proyecto en esta app !!!</h8>
-  <p>Correo: CubanCrypto-Tracker@proton.me<br><br>Teléfono:</p>
+  <p style="margin-bottom: 20px;">Correo: <a href="mailto:CubanCrypto-Tracker@proton.me" style="color: #007BFF; text-decoration: none;">CubanCrypto-Tracker@proton.me</a><br><br>Teléfono:</p>
 
-<h3>Promociona en la app:</h3>
-<ul style="list-style: none; padding: 0;">
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-facebook"></i> Grupos de Facebook
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-whatsapp"></i> Grupos de WhatsApp
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-telegram"></i> Canales de Telegram
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-youtube"></i> Canales de YouTube
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-youtube"></i> Videos de YouTube
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-kanban-fill"></i> Proyectos
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-briefcase-fill"></i> Servicios/Productos
-  </li>
-  <li style="margin-bottom: 5px;">
-    <i class="bi bi-currency-bitcoin"></i> Criptomonedas
-  </li>
-</ul>
+  <h3>Promociona en la app:</h3>
+  <ul style="list-style: none; padding: 0; margin-bottom: 20px;">
+    <li style="margin-bottom: 10px;"><i class="bi bi-facebook"></i> Grupos de Facebook</li>
+    <li style="margin-bottom: 10px;"><i class="bi bi-whatsapp"></i> Grupos de WhatsApp</li>
+    <li style="margin-bottom: 10px;"><i class="bi bi-telegram"></i> Canales de Telegram</li>
+    <li style="margin-bottom: 10px;"><i class="bi bi-kanban-fill"></i> Proyectos</li>
+    <li style="margin-bottom: 10px;"><i class="bi bi-briefcase-fill"></i> Servicios/Productos</li>
+    <li style="margin-bottom: 10px;"><i class="bi bi-currency-bitcoin"></i> Criptomonedas</li>
+  </ul>
 
-  <p><strong>Nota:</strong> El creador de CubanCrypto-Tracker no es responsable por la revisión, interacción o los datos que los usuarios promocionen en la app. Los usuarios interactúan y comparten información bajo su propia responsabilidad.</p>
+  <p style="margin-bottom: 20px;"><strong>Nota:</strong> El creador de CubanCrypto-Tracker no es responsable por la revisión, interacción o los datos que los usuarios promocionen en la app. Los usuarios interactúan y comparten información bajo su propia responsabilidad.</p>
 
   <p>¡No dudes en contactarnos para más información o para promocionar tu proyecto!</p>
 `;
+
+
+
 
 // Contenido del modal de Acerca de (aboutModal)
 const aboutModalContent = `
