@@ -255,6 +255,81 @@ body {
     text-decoration: underline;
 }
 
+/* Estilos para la sección de noticias */
+.app-news-item {
+    background-color: #2c2c2c; /* Fondo oscuro para las tarjetas de noticias */
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados */
+    border: 1px solid #444; /* Borde sutil */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.app-news-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.app-news-content {
+    color: #e0e0e0; /* Texto claro */
+}
+
+.news-date {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro para la fecha */
+    margin-bottom: 10px;
+}
+
+.app-news-content h4 {
+    font-size: 20px;
+    color: #ffffff; /* Texto blanco para el título */
+    margin-bottom: 10px;
+}
+
+.app-news-content p {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro para la descripción */
+    margin-bottom: 15px;
+}
+
+.app-news-content a {
+    color: #007bff; /* Azul brillante para los enlaces */
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.app-news-content a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.app-news-content a i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Separador entre noticias */
+.news-separator {
+    border: 0;
+    height: 1px;
+    background: #444; /* Línea separadora */
+    margin: 20px 0;
+}
+
+/* Estilos para la imagen de la noticia */
+.app-news-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    margin-bottom: 15px;
+    border: 1px solid #333; /* Borde sutil para la imagen */
+}
+
+/* Efecto de hover para la imagen */
+.app-news-item img:hover {
+    opacity: 0.9; /* Ligera transparencia al pasar el mouse */
+}
+
 /* Responsive para móviles */
 @media (max-width: 768px) {
     .container {
@@ -301,5 +376,17 @@ body {
 
     .contact-info h3 {
         font-size: 14px;
+    }
+
+    .app-news-item {
+        padding: 15px;
+    }
+
+    .app-news-content h4 {
+        font-size: 18px;
+    }
+
+    .app-news-content p {
+        font-size: 13px;
     }
 }
