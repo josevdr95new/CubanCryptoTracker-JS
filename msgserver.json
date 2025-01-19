@@ -10,5 +10,12 @@
         "img": null,
         "descripcion": "¡Atención! La versión para Windows x64 ya está disponible para descargar. Por favor, lee bien los requisitos del sistema antes de proceder con la instalación.",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
+    },
+	
+	{
+        "fecha": "2025-01-19",
+        "img": null,
+        "descripcion": "¡Problemas con servicio de terceros, sin app hasta nuevo habiso",
+        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     }
 ]
