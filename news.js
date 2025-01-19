@@ -1,11 +1,11 @@
 // news.js
-
 const loadNews = async () => {
   const newsContainer = document.getElementById('newsContainer');
   newsContainer.innerHTML = '<p>Cargando noticias...</p>';
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
-    const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl)}`;
+    const uniqueParam = `?timestamp=${new Date().getTime()}`; // Agrega un parámetro único
+    const allOriginsUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
     const response = await fetch(allOriginsUrl);
     const data = await response.json();
     const parser = new DOMParser();
