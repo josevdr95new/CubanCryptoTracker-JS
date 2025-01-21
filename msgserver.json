@@ -1,21 +1,8 @@
 [
     {
-        "fecha": "2025-01-14",
+        "fecha": "2025-01-21",
         "img": null,
-        "descripcion": "¡Nueva actualización disponible! La versión BETA 0.2 está lista ya para descargar. La versión anterior (BETA 0.1) dejará de funcionar. Por favor, actualiza para continuar usando CubanCrypto-Tracker.",
-        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
-    },
-    {
-        "fecha": "2025-01-16",
-        "img": null,
-        "descripcion": "¡Atención! La versión para Windows x64 ya está disponible para descargar. Por favor, lee bien los requisitos del sistema antes de proceder con la instalación.",
-        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
-    },
-	
-	{
-        "fecha": "2025-01-19",
-        "img": null,
-        "descripcion": "¡Problemas con servicio de terceros, sin app hasta nuevo habiso",
+        "descripcion": "¡Próximo lanzamiento! Se lanzará una actualización para resolver el problema con el servicio de terceros de manera permanente. Mantente atento.",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
     }
 ]
