@@ -130,8 +130,8 @@
 
     <script>
         // Función para generar un código aleatorio
-        function generateRandomCode(length = 6) {
-            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        function generateRandomCode(length = 4) {
+            const characters = '123456789';
             let code = '';
             for (let i = 0; i < length; i++) {
                 code += characters.charAt(Math.floor(Math.random() * characters.length));
