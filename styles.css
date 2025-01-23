@@ -349,7 +349,7 @@ body {
 
 #verification-code-android,
 #verification-code-windows {
-    font-size: 18px;
+    font-size: 35px;
     font-weight: bold;
     color: #ffffff; /* Texto blanco */
     margin-bottom: 10px;
@@ -510,8 +510,3 @@ body {
 .security-banner a:hover {
     color: #218838; /* Verde más oscuro al pasar el mouse */
 }
-
-    #verification-code-android,
-    #verification-code-windows {
-        font-size: 35px;
-    }
