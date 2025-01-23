@@ -10,9 +10,20 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- Chart.js para gráficas -->
 </head>
 <body>
+
     <div class="container">
         <!-- Encabezado -->
         <header class="header">
+		    <!-- Notificación de seguridad -->
+    <div class="security-banner">
+        <i class="fas fa-shield-alt"></i>
+        <p>
+            Este es el sitio oficial de <strong>CubanCrypto Tracker</strong>. 
+            Cualquier otro sitio es falso. 
+            <br>
+            URL oficial: <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/" target="_blank">https://josevdr95new.github.io/CubanCryptoTracker-JS/</a>
+        </p>
+    </div>
             <h1>CubanCrypto Tracker</h1>
             <p class="subtitle">La mejor herramienta para rastrear criptomonedas en Cuba.</p>
             <p class="version">Versión BETA v0.3 2025</p>
@@ -37,9 +48,21 @@
                 <div class="preview-image">
                     <img src="01.png" alt="Vista previa de la APK">
                 </div>
-                <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/CubanCrypto_Tracker.apk" download class="download-link" id="download-apk">
+
+                <!-- Verificación de bots con código aleatorio -->
+                <div id="bot-verification-android">
+                    <p>Por favor, ingresa el siguiente código para desbloquear la descarga:</p>
+                    <p><strong id="verification-code-android"></strong></p>
+                    <input type="text" id="user-input-android" placeholder="Ingresa el código aquí">
+                    <button onclick="verifyCodeAndroid()">Verificar</button>
+                    <p id="verification-message-android" style="color: red; display: none;">Código incorrecto. Inténtalo de nuevo.</p>
+                </div>
+
+                <!-- Botón de descarga (inicialmente deshabilitado) -->
+                <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/CubanCrypto_Tracker.apk" download class="download-link" id="download-apk" style="display: none;">
                     <i class="fas fa-download"></i> Descargar APK (4.15MB) - BETA v0.3
                 </a>
+
                 <!-- Cantidad de descargas -->
                 <div class="download-count">
                     <i class="fas fa-download"></i>
@@ -58,9 +81,21 @@
                 <p class="description">
                     Esta es una versión beta solo para pruebas. Si no tienes instalado el <strong>Microsoft Edge WebView2 Runtime</strong>, la aplicación lo descargará e instalará automáticamente al ejecutarse.
                 </p>
-                <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/CubanCrypto-Tracker_Win64.exe" download class="download-link" id="download-win64">
-                    <i class="fas fa-download"></i> Descargar para Win64 (13.77MB) - BETA v0.2
+
+                <!-- Verificación de bots con código aleatorio -->
+                <div id="bot-verification-windows">
+                    <p>Por favor, ingresa el siguiente código para desbloquear la descarga:</p>
+                    <p><strong id="verification-code-windows"></strong></p>
+                    <input type="text" id="user-input-windows" placeholder="Ingresa el código aquí">
+                    <button onclick="verifyCodeWindows()">Verificar</button>
+                    <p id="verification-message-windows" style="color: red; display: none;">Código incorrecto. Inténtalo de nuevo.</p>
+                </div>
+
+                <!-- Botón de descarga (inicialmente deshabilitado) -->
+                <a href="https://josevdr95new.github.io/CubanCryptoTracker-JS/CubanCrypto-Tracker_Win64.exe" download class="download-link" id="download-win64" style="display: none;">
+                    <i class="fas fa-download"></i> Descargar para Win64 (13.77MB) - BETA v0.3
                 </a>
+
                 <!-- Cantidad de descargas -->
                 <div class="download-count">
                     <i class="fas fa-download"></i>
@@ -68,15 +103,9 @@
                 </div>
                 <div class="hash-info">
                     <h3>Verificación de seguridad (Win64)</h3>
-                    <p>MD5: <code>31fc271354073ee07b2e38377bbfb79f</code></p>
-                    <p>SHA256: <code>18ac886e447ff528e3eadd1a5c0cf4382475bd95790bd0ca783debac7ce76ba7</code></p>
+                    <p>MD5: <code>8bc61dc9254ca3901f56ccf965c94528</code></p>
+                    <p>SHA256: <code>ae897d2770daa4facda3148c09a10eeb06c469b90bbed18970ce03ba24d79c4e</code></p>
                 </div>
-                <p class="description">
-                    Si prefieres instalarlo manualmente, descarga el <strong>Microsoft Edge WebView2 Runtime</strong>:
-                    <a href="https://www.softpedia.com/get/System/OS-Enhancements/Microsoft-Edge-WebView2-Runtime.shtml" target="_blank" class="direct-download-link">
-                        <i class="fas fa-external-link-alt"></i> Descargar WebView2 Runtime (+135MB)
-                    </a>
-                </p>
             </div>
 
             <!-- Estadísticas de visitas -->
@@ -100,6 +129,62 @@
     </div>
 
     <script>
+        // Función para generar un código aleatorio
+        function generateRandomCode(length = 6) {
+            const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+            let code = '';
+            for (let i = 0; i < length; i++) {
+                code += characters.charAt(Math.floor(Math.random() * characters.length));
+            }
+            return code;
+        }
+
+        // Generar y mostrar el código para Android
+        let verificationCodeAndroid = generateRandomCode();
+        document.getElementById('verification-code-android').textContent = verificationCodeAndroid;
+
+        // Generar y mostrar el código para Windows
+        let verificationCodeWindows = generateRandomCode();
+        document.getElementById('verification-code-windows').textContent = verificationCodeWindows;
+
+        // Función para verificar el código en la sección de Android
+        function verifyCodeAndroid() {
+            const userInput = document.getElementById('user-input-android').value;
+            const messageElement = document.getElementById('verification-message-android');
+
+            if (userInput === verificationCodeAndroid) {
+                // Código correcto: mostrar el botón de descarga
+                document.getElementById('bot-verification-android').style.display = 'none';
+                document.getElementById('download-apk').style.display = 'inline-block';
+                messageElement.style.display = 'none';
+            } else {
+                // Código incorrecto: mostrar mensaje de error y generar un nuevo código
+                messageElement.style.display = 'block';
+                verificationCodeAndroid = generateRandomCode(); // Generar un nuevo código
+                document.getElementById('verification-code-android').textContent = verificationCodeAndroid; // Actualizar el código en la página
+                document.getElementById('user-input-android').value = ''; // Limpiar el campo de entrada
+            }
+        }
+
+        // Función para verificar el código en la sección de Windows
+        function verifyCodeWindows() {
+            const userInput = document.getElementById('user-input-windows').value;
+            const messageElement = document.getElementById('verification-message-windows');
+
+            if (userInput === verificationCodeWindows) {
+                // Código correcto: mostrar el botón de descarga
+                document.getElementById('bot-verification-windows').style.display = 'none';
+                document.getElementById('download-win64').style.display = 'inline-block';
+                messageElement.style.display = 'none';
+            } else {
+                // Código incorrecto: mostrar mensaje de error y generar un nuevo código
+                messageElement.style.display = 'block';
+                verificationCodeWindows = generateRandomCode(); // Generar un nuevo código
+                document.getElementById('verification-code-windows').textContent = verificationCodeWindows; // Actualizar el código en la página
+                document.getElementById('user-input-windows').value = ''; // Limpiar el campo de entrada
+            }
+        }
+
         // Función para cargar las noticias de la app
         const loadAppNews = async () => {
             const appNewsContainer = document.getElementById('appNewsContainer');
