@@ -510,3 +510,16 @@ body {
 .security-banner a:hover {
     color: #218838; /* Verde más oscuro al pasar el mouse */
 }
+
+
+@media (max-width: 768px) {
+    .security-banner {
+        flex-direction: column; /* Cambia la dirección del flex para apilar el ícono y el texto */
+        padding: 10px; /* Reduce el padding */
+        font-size: 12px; /* Reduce el tamaño de la fuente */
+    }
+
+    .security-banner i {
+        font-size: 16px; /* Reduce el tamaño del ícono */
+    }
+}
