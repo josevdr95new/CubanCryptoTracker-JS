@@ -523,3 +523,52 @@ body {
         font-size: 16px; /* Reduce el tamaño del ícono */
     }
 }
+
+.chrome-note {
+    background-color: #fff3cd; /* Fondo amarillo claro */
+    border-left: 4px solid #ffc107; /* Borde izquierdo amarillo */
+    padding: 12px 16px; /* Espaciado interno */
+    margin: 16px 0; /* Margen superior e inferior */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #856404; /* Color de texto oscuro para contraste */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.chrome-note strong {
+    color: #333; /* Color oscuro para el texto en negrita */
+}
+
+.chrome-note a {
+    color: #007bff; /* Color azul para enlaces */
+    text-decoration: underline; /* Subrayado para enlaces */
+}
+
+.chrome-note a:hover {
+    color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+}
+
+
+body > div > main > div:nth-child(3) > strong {
+    color: #d9534f; /* Color rojo para resaltar */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente más grande */
+    font-weight: 600; /* Grosor de la fuente (negrita más pronunciada) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra de texto sutil */
+    padding: 4px 8px; /* Espaciado interno */
+    background-color: #f8d7da; /* Fondo rojo claro */
+    border-radius: 4px; /* Bordes redondeados */
+    display: inline-block; /* Para que el fondo no ocupe toda la línea */
+}
+
+
+body > div > main > div:nth-child(3) > p {
+    color: #555; /* Color de texto gris oscuro */
+    font-size: 1em; /* Tamaño de fuente normal */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    margin-bottom: 15px; /* Margen inferior para separar párrafos */
+    padding: 10px; /* Espaciado interno */
+
+    border-left: 4px solid #007bff; /* Borde izquierdo azul */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
