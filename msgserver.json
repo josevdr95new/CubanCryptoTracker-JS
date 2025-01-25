@@ -4,5 +4,11 @@
         "img": null,
         "descripcion": "¡La BETA v0.3 ya está disponible para descargar! Esta versión resuelve todos los problemas anteriores. Ten en cuenta que las versiones anteriores dejarán de funcionar. ¡No te quedes atrás y actualiza ahora!",
         "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
+    },
+    {
+        "fecha": "2025-01-25",
+        "img": null,
+        "descripcion": "¡Atención! Pronto cambiaremos la URL de la web oficial. Mantente atento a las actualizaciones para no perderte la nueva ubicación.",
+        "enlace": null
     }
 ]
