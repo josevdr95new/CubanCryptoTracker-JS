@@ -1,5 +1,16 @@
 {
-    "airdrop": [],
+    "airdrop": [
+        {
+            "nombre": "MTT Sports",
+            "descripcion": "Es un juego de póker online disponible para todos los apasionados y permite jugar muchos torneos al día de forma gratis. Todos pueden ganar su criptomoneda. Puedes ganar hasta BTC participando en torneos gratis.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "Sí",
+            "enlace": "https://mtt.xyz/share/ab9e13a0",
+            "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
+            "fechaPublicacion": "2025-01-25"
+        }
+    ],
     "mineria": [
         {
             "nombre": "GenkiMiner",
@@ -44,18 +55,7 @@
             "fechaPublicacion": "2025-01-09"
         }
     ],
-    "faucet": [
-        {
-            "nombre": "Waxta",
-            "descripcion": "Waxta es un faucet que permite ganar criptomonedas gratis con mínimos de retiro muy bajos. Ofrece varias formas de ganar, como viendo anuncios, minando y más. Además, permite retiros a FaucetPay.",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "Sí",
-            "enlace": "https://waxta.com/i/70395",
-            "imagen": "https://waxta.com/img/logo.png",
-            "fechaPublicacion": "2025-01-14"
-        }
-    ],
+    "faucet": [],
     "otros": [
         {
             "nombre": "FaucetPay",
