@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://josevdr95new.github.io/CubanCryptoTracker-JS/sitemap.xml
