@@ -3,12 +3,12 @@
         "fecha": "2025-01-22",
         "img": null,
         "descripcion": "¡La BETA v0.3 ya está disponible para descargar! Esta versión resuelve todos los problemas anteriores. Ten en cuenta que las versiones anteriores dejarán de funcionar. ¡No te quedes atrás y actualiza ahora!",
-        "enlace": "https://josevdr95new.github.io/CubanCryptoTracker-JS/"
+        "enlace": "https://cubancrypto-tracker.pages.dev/"
     },
     {
-        "fecha": "2025-01-26",
+        "fecha": "2025-01-27",
         "img": null,
         "descripcion": "¡Ya cambiamos a nuestra nueva web oficial! Visítanos en el siguiente enlace para acceder a la última versión.",
-        "enlace": "https://cubancrypto-tracker.wuaze.com/"
+        "enlace": "https://cubancrypto-tracker.pages.dev/"
     }
 ]
