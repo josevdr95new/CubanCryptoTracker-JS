@@ -1,0 +1,656 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    line-height: 1.6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    background-color: #1e1e1e; /* Fondo del contenedor */
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+}
+
+/* Encabezado */
+.header h1 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.header .subtitle {
+    font-size: 16px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 10px;
+}
+
+.header .version {
+    font-size: 14px;
+    color: #888; /* Texto gris */
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+
+/* Contenido principal */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Sección de actualización */
+.update-section {
+    margin-bottom: 20px;
+}
+
+.update-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff; /* Texto blanco */
+}
+
+#update-info {
+    background-color: #333; /* Fondo oscuro */
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid #444; /* Borde para la sección */
+    color: #e0e0e0; /* Texto claro */
+    text-align: left;
+}
+
+.update-item {
+    margin-bottom: 15px;
+}
+
+.update-item p {
+    margin: 10px 0;
+}
+
+.update-item a {
+    color: #007bff; /* Azul brillante */
+    text-decoration: none;
+}
+
+.update-item a:hover {
+    text-decoration: underline;
+}
+
+.update-item hr {
+    border: 0;
+    height: 1px;
+    background: #444; /* Línea separadora */
+    margin: 15px 0;
+}
+
+/* Sección de descarga */
+.download-section {
+    margin-bottom: 20px;
+}
+
+.download-section h2 {
+    font-size: 22px;
+    margin-bottom: 15px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.download-section .description {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 20px;
+}
+
+.preview-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #333; /* Borde para la imagen */
+}
+
+/* Botón de descarga */
+.download-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 20px;
+    background-color: #007bff; /* Azul brillante */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+.download-link i {
+    margin-right: 10px;
+}
+
+.download-link:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+/* Estilos para la cantidad de descargas */
+.download-count {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 0.1); /* Fondo semi-transparente */
+    padding: 8px 12px;
+    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Borde sutil */
+    backdrop-filter: blur(5px); /* Efecto de desenfoque */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Sombra suave */
+}
+
+.download-count i {
+    color: #007bff; /* Icono azul brillante */
+    font-size: 16px;
+}
+
+.download-count span {
+    font-weight: 500;
+    color: #ffffff; /* Texto blanco */
+}
+
+/* Enlace adicional de descarga */
+.additional-download {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.additional-download p {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 10px;
+}
+
+.direct-download-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 15px;
+    background-color: #28a745; /* Verde */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.direct-download-link i {
+    margin-right: 10px;
+}
+
+.direct-download-link:hover {
+    background-color: #218838; /* Verde más oscuro al pasar el mouse */
+}
+
+/* Verificación de seguridad */
+.hash-info {
+    margin-top: 20px;
+    font-size: 12px;
+    color: #b0b0b0; /* Texto gris claro */
+}
+
+.hash-info h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.hash-info code {
+    background-color: #333; /* Fondo oscuro para los códigos */
+    color: #e0e0e0; /* Texto claro */
+    padding: 6px 12px;
+    border-radius: 4px;
+    font-family: 'Courier New', Courier, monospace;
+    display: block;
+    margin: 5px 0;
+    word-wrap: break-word;
+}
+
+/* Información de contacto */
+.contact-info {
+    margin-top: 20px;
+}
+
+.contact-info h3 {
+    font-size: 16px;
+    margin-bottom: 10px;
+    color: #ffffff; /* Texto blanco */
+}
+
+.contact-link {
+    color: #007bff; /* Azul brillante */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+}
+
+.contact-link i {
+    margin-right: 10px;
+}
+
+.contact-link:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para la sección de noticias */
+.app-news-item {
+    background-color: #2c2c2c; /* Fondo oscuro para las tarjetas de noticias */
+    padding: 20px;
+    border-radius: 12px; /* Bordes redondeados */
+    border: 1px solid #444; /* Borde sutil */
+    margin-bottom: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.app-news-item:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+}
+
+.app-news-content {
+    color: #e0e0e0; /* Texto claro */
+}
+
+.news-date {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro para la fecha */
+    margin-bottom: 10px;
+}
+
+.app-news-content h4 {
+    font-size: 20px;
+    color: #ffffff; /* Texto blanco para el título */
+    margin-bottom: 10px;
+}
+
+.app-news-content p {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro para la descripción */
+    margin-bottom: 15px;
+}
+
+.app-news-content a {
+    color: #007bff; /* Azul brillante para los enlaces */
+    text-decoration: none;
+    font-weight: 500;
+    display: inline-flex;
+    align-items: center;
+}
+
+.app-news-content a:hover {
+    text-decoration: underline; /* Subrayado al pasar el mouse */
+}
+
+.app-news-content a i {
+    margin-right: 8px; /* Espacio entre el icono y el texto */
+}
+
+/* Separador entre noticias */
+.news-separator {
+    border: 0;
+    height: 1px;
+    background: #444; /* Línea separadora */
+    margin: 20px 0;
+}
+
+/* Estilos para la imagen de la noticia */
+.app-news-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Bordes redondeados para la imagen */
+    margin-bottom: 15px;
+    border: 1px solid #333; /* Borde sutil para la imagen */
+}
+
+/* Efecto de hover para la imagen */
+.app-news-item img:hover {
+    opacity: 0.9; /* Ligera transparencia al pasar el mouse */
+}
+
+/* Estilos para la verificación de bots */
+#bot-verification-android,
+#bot-verification-windows {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border-radius: 8px;
+    border: 1px solid #444; /* Borde sutil */
+}
+
+#bot-verification-android p,
+#bot-verification-windows p {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 10px;
+}
+
+#verification-code-android,
+#verification-code-windows {
+    font-size: 35px;
+    font-weight: bold;
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 10px;
+}
+
+#user-input-android,
+#user-input-windows {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #444; /* Borde sutil */
+    background-color: #333; /* Fondo oscuro */
+    color: #e0e0e0; /* Texto claro */
+    font-size: 14px;
+    width: 100%;
+    max-width: 300px;
+    margin-bottom: 10px;
+}
+
+#bot-verification-android button,
+#bot-verification-windows button {
+    padding: 10px 20px;
+    background-color: #007bff; /* Azul brillante */
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#bot-verification-android button:hover,
+#bot-verification-windows button:hover {
+    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
+}
+
+#verification-message-android,
+#verification-message-windows {
+    font-size: 14px;
+    color: #ff4444; /* Rojo para mensajes de error */
+    margin-top: 10px;
+    display: none;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+
+    .header h1 {
+        font-size: 24px;
+    }
+
+    .header .subtitle {
+        font-size: 14px;
+    }
+
+    .header .version {
+        font-size: 12px;
+    }
+
+    .download-section h2 {
+        font-size: 20px;
+    }
+
+    .download-section .description {
+        font-size: 13px;
+    }
+
+    .download-link {
+        font-size: 14px;
+        padding: 10px 15px;
+    }
+
+    .download-count {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+
+    .hash-info {
+        font-size: 11px;
+    }
+
+    .hash-info h3 {
+        font-size: 14px;
+    }
+
+    .contact-info h3 {
+        font-size: 14px;
+    }
+
+    .app-news-item {
+        padding: 15px;
+    }
+
+    .app-news-content h4 {
+        font-size: 18px;
+    }
+
+    .app-news-content p {
+        font-size: 13px;
+    }
+
+    #bot-verification-android,
+    #bot-verification-windows {
+        padding: 10px;
+    }
+
+    #verification-code-android,
+    #verification-code-windows {
+        font-size: 35px;
+    }
+
+    #user-input-android,
+    #user-input-windows {
+        font-size: 13px;
+    }
+
+    #bot-verification-android button,
+    #bot-verification-windows button {
+        font-size: 13px;
+        padding: 8px 16px;
+    }
+}
+
+/* Notificación de seguridad */
+.security-banner {
+    background-color: #1e1e1e; /* Fondo oscuro para combinar con el tema */
+    color: #e0e0e0; /* Texto claro */
+    padding: 12px;
+    text-align: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Espacio entre el ícono y el texto */
+    border: 1px solid #444; /* Borde sutil */
+    border-radius: 8px; /* Bordes redondeados */
+}
+
+.security-banner i {
+    font-size: 20px; /* Tamaño del ícono */
+    color: #28a745; /* Color verde para el ícono */
+}
+
+.security-banner p {
+    margin: 0; /* Elimina el margen por defecto del párrafo */
+}
+
+.security-banner a {
+    color: #28a745; /* Color verde para el enlace */
+    text-decoration: underline; /* Subrayado para el enlace */
+    font-weight: bold; /* Texto en negrita */
+}
+
+.security-banner a:hover {
+    color: #218838; /* Verde más oscuro al pasar el mouse */
+}
+
+
+@media (max-width: 768px) {
+    .security-banner {
+        flex-direction: column; /* Cambia la dirección del flex para apilar el ícono y el texto */
+        padding: 10px; /* Reduce el padding */
+        font-size: 12px; /* Reduce el tamaño de la fuente */
+    }
+
+    .security-banner i {
+        font-size: 16px; /* Reduce el tamaño del ícono */
+    }
+}
+
+.chrome-note {
+    background-color: #fff3cd; /* Fondo amarillo claro */
+    border-left: 4px solid #ffc107; /* Borde izquierdo amarillo */
+    padding: 12px 16px; /* Espaciado interno */
+    margin: 16px 0; /* Margen superior e inferior */
+    border-radius: 4px; /* Bordes redondeados */
+    font-size: 0.9em; /* Tamaño de fuente ligeramente más pequeño */
+    color: #856404; /* Color de texto oscuro para contraste */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.chrome-note strong {
+    color: #333; /* Color oscuro para el texto en negrita */
+}
+
+.chrome-note a {
+    color: #007bff; /* Color azul para enlaces */
+    text-decoration: underline; /* Subrayado para enlaces */
+}
+
+.chrome-note a:hover {
+    color: #0056b3; /* Color azul más oscuro al pasar el mouse */
+}
+
+
+body > div > main > div:nth-child(3) > strong {
+    color: #d9534f; /* Color rojo para resaltar */
+    font-size: 1.1em; /* Tamaño de fuente ligeramente más grande */
+    font-weight: 600; /* Grosor de la fuente (negrita más pronunciada) */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1); /* Sombra de texto sutil */
+    padding: 4px 8px; /* Espaciado interno */
+    background-color: #f8d7da; /* Fondo rojo claro */
+    border-radius: 4px; /* Bordes redondeados */
+    display: inline-block; /* Para que el fondo no ocupe toda la línea */
+}
+
+
+body > div > main > div:nth-child(3) > p {
+    color: #555; /* Color de texto gris oscuro */
+    font-size: 1em; /* Tamaño de fuente normal */
+    line-height: 1.6; /* Espaciado entre líneas para mejor legibilidad */
+    margin-bottom: 15px; /* Margen inferior para separar párrafos */
+    padding: 10px; /* Espaciado interno */
+
+    border-left: 4px solid #007bff; /* Borde izquierdo azul */
+    border-radius: 4px; /* Bordes redondeados */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+
+
+/* Estilos para la sección de Preguntas Frecuentes (FAQ) */
+.faq-section {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #2c2c2c; /* Fondo oscuro */
+    border-radius: 12px; /* Bordes redondeados */
+    border: 1px solid #444; /* Borde sutil */
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* Sombra suave */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transición suave */
+}
+
+.faq-section:hover {
+    transform: translateY(-5px); /* Efecto de elevación al pasar el mouse */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* Sombra más pronunciada */
+}
+
+.faq-section h2 {
+    font-size: 24px;
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.faq-section h3 {
+    font-size: 18px;
+    color: #ffffff; /* Texto blanco */
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #333; /* Fondo oscuro para las preguntas */
+    border-radius: 8px; /* Bordes redondeados */
+    border-left: 4px solid #007bff; /* Borde izquierdo azul */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.faq-section h3:hover {
+    background-color: #444; /* Cambio de color al pasar el mouse */
+}
+
+.faq-section p {
+    font-size: 14px;
+    color: #b0b0b0; /* Texto gris claro */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #333; /* Fondo oscuro para las respuestas */
+    border-radius: 8px; /* Bordes redondeados */
+    border-left: 4px solid #28a745; /* Borde izquierdo verde */
+    transition: background-color 0.3s ease; /* Transición suave */
+}
+
+.faq-section p:hover {
+    background-color: #444; /* Cambio de color al pasar el mouse */
+}
+
+/* Separador entre preguntas */
+.faq-section hr {
+    border: 0;
+    height: 1px;
+    background: #444; /* Línea separadora */
+    margin: 20px 0;
+}
+
+/* Estilos para dispositivos móviles */
+@media (max-width: 768px) {
+    .faq-section {
+        padding: 15px;
+    }
+
+    .faq-section h2 {
+        font-size: 20px;
+    }
+
+    .faq-section h3 {
+        font-size: 16px;
+    }
+
+    .faq-section p {
+        font-size: 13px;
+    }
+}
