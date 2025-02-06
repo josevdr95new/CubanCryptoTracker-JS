@@ -2,9 +2,7 @@
     "airdrop": [
         {
             "nombre": "MTT Sports",
-            "descripcion": "📊 Precio promedio MTT (mercado informal) - 6 de febrero de 2025 | 00:00 UTC\\n\\n⬇️ Tasa de cambio:\\n🔹 USDT → CUP: 0.072\\n🔹 CUP → USDT: 27.2\\n\\n⚠️ Advertencias:\\n▸ Fuentes: Datos recopilados de chats (Telegram, WhatsApp, Facebook)\\n▸ Procesamiento: Actualización cada 24h con IA\\n▸ Uso bajo su propio riesgo: No representa asesoramiento financiero\\n\\n💡 Nota técnica:\\nEste promedio es informativo y no refleja precios reales en tiempo real.",
-            "estado": "Activo",
-            "pago": "Sí",
+            "descripcion": "📊 MTT (mercado informal) - 06/02/2025 00:00 UTC\\n↔️ Tasa: USDT→CUP 0.072 / CUP→USDT 27.2\\n\\n⚙️ **Metodología:**\\n▸ Fuentes: Mensajes de TG/WA/FB 📩\\n▸ Recopilación manual + Procesamiento con IA 🤖\\n▸ Actualización: Cada 24h (posible retraso de hasta 48h) ⏳\\n\\n⚠️ **Advertencia:**\\nDatos referenciales. No es asesoramiento financiero. 🛑",            "pago": "Sí",
             "gratis": "Sí",
             "enlace": "https://mtt.xyz/share/ab9e13a0",
             "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
