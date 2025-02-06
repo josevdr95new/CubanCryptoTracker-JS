@@ -2,11 +2,7 @@
     "airdrop": [
         {
             "nombre": "MTT Sports",
-            "descripcion": "Es un juego de póker online disponible para todos los apasionados y permite jugar muchos torneos al día de forma gratis. Todos pueden ganar su criptomoneda. Puedes ganar hasta BTC participando en torneos gratis. 
-            Precio promedio del mercado informal para 06/02/2025 00UTC
-            USDT: 0.072
-            CUP: 27.2
-            Éstos precios se obtiene del mercado informal de diferentes fuentes (Chat de Telegram, WhatsApp, Facebook) y se procesan com AI, usted ópera bajo su propio riesgo usando estos datos.",
+            "descripcion": "Es un juego de póker online disponible para todos los apasionados y permite jugar muchos torneos al día de forma gratis. Todos pueden ganar su criptomoneda. Puedes ganar hasta BTC participando en torneos gratis. Precio promedio del mercado informal para 06/02/2025 00UTC USDT: 0.072 CUP: 27.2 Éstos precios se obtiene del mercado informal de diferentes fuentes (Chat de Telegram, WhatsApp, Facebook) y se procesan com AI, usted ópera bajo su propio riesgo usando estos datos.",
             "estado": "Activo",
             "pago": "Sí",
             "gratis": "Sí",
@@ -21,30 +17,10 @@
             "descripcion": "GenkiMiner es un bot de Telegram que permite a los usuarios ganar USDT (Tether) realizando tareas y jugando. Este bot se ha vuelto popular debido a su mecánica de juego atractiva y la posibilidad de obtener ingresos pasivos.",
             "estado": "Activo",
             "pago": "Sí",
-            "gratis": "Si",
+            "gratis": "Sí",
             "enlace": "https://t.me/cBot/GenkiMiner?startapp=RfO_RalS",
             "imagen": "https://www.findmini.app/_astro/e7_r_bd_ho_400x400_aNraD02FQj_Z2mwenL.webp",
             "fechaPublicacion": "2025-01-10"
-        },
-        {
-            "nombre": "Goblin Mine",
-            "descripcion": "El bot Goblin Mine en Telegram permite a los usuarios ganar criptomonedas TON mediante la minería de monedas virtuales. Los jugadores pueden mejorar sus minas y aumentar su producción diaria para alcanzar recompensas significativas.",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "No",
-            "enlace": "https://t.me/GoblinMine_bot/start?startapp=1661848348",
-            "imagen": "https://academy-public.coinmarketcap.com/optimized-uploads/9ac15813dcbc4204bd04e8745f8e67de.jpeg",
-            "fechaPublicacion": "2025-01-14"
-        },
-        {
-            "nombre": "ORCMine",
-            "descripcion": "Nuevo bot de mineria similar a Goblin Mine",
-            "estado": "Activo",
-            "pago": "Desconocido",
-            "gratis": "Si",
-            "enlace": "https://t.me/orcmine_bot/play?startapp=1661848348&startApp=1661848348",
-            "imagen": "https://pbs.twimg.com/profile_images/1879204091475173385/Xgjo1uhL_400x400.jpg",
-            "fechaPublicacion": "2025-01-19"
         }
     ],
     "juegos": [
@@ -82,4 +58,4 @@
             "enlace": "https://www.coinex.com/en/register?refer_code=r8g3w"
         }
     ]
-}
+        }
