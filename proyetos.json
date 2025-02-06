@@ -1,52 +1,15 @@
 {
     "airdrop": [
-{
-    "nombre": "MTT Sports",
-    "descripcion": `
-        <style>
-            .price-info {
-                margin-top: 1.5rem;
-                padding: 1rem;
-                background-color: #f8f9fa;
-                border-left: 4px solid var(--accent);
-                border-radius: 4px;
-            }
-            .price-info h5 {
-                margin: 0 0 0.8rem 0;
-                color: var(--accent);
-                font-size: 1rem;
-            }
-            .price-info ul {
-                margin: 0;
-                padding-left: 1.2rem;
-            }
-            .price-info li {
-                margin-bottom: 0.4rem;
-            }
-            .price-info small {
-                display: block;
-                margin-top: 0.8rem;
-                color: #666;
-                font-size: 0.85rem;
-            }
-        </style>
-        <p>Es un juego de póker online disponible para todos los apasionados y permite jugar muchos torneos al día de forma gratis. Todos pueden ganar su criptomoneda. Puedes ganar hasta BTC participando en torneos gratis.</p>
-        <div class="price-info">
-            <h5>Precio promedio del mercado informal (06/02/2025 00UTC):</h5>
-            <ul>
-                <li>USDT: <strong>0.072</strong></li>
-                <li>CUP: <strong>27.2</strong></li>
-            </ul>
-            <small>Éstos precios se obtienen del mercado informal de diferentes fuentes (Chat de Telegram, WhatsApp, Facebook) y se procesan con AI. Usted opera bajo su propio riesgo usando estos datos.</small>
-        </div>
-    `,
-    "estado": "Activo",
-    "pago": "Sí",
-    "gratis": "Sí",
-    "enlace": "https://mtt.xyz/share/ab9e13a0",
-    "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
-    "fechaPublicacion": "2025-01-25"
-}
+        {
+            "nombre": "MTT Sports",
+            "descripcion": "Es un juego de póker online disponible para todos los apasionados y permite jugar muchos torneos al día de forma gratis. Todos pueden ganar su criptomoneda. Puedes ganar hasta BTC participando en torneos gratis.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "Sí",
+            "enlace": "https://mtt.xyz/share/ab9e13a0",
+            "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
+            "fechaPublicacion": "2025-01-25"
+        }
     ],
     "mineria": [
         {
@@ -54,10 +17,30 @@
             "descripcion": "GenkiMiner es un bot de Telegram que permite a los usuarios ganar USDT (Tether) realizando tareas y jugando. Este bot se ha vuelto popular debido a su mecánica de juego atractiva y la posibilidad de obtener ingresos pasivos.",
             "estado": "Activo",
             "pago": "Sí",
-            "gratis": "Sí",
+            "gratis": "Si",
             "enlace": "https://t.me/cBot/GenkiMiner?startapp=RfO_RalS",
             "imagen": "https://www.findmini.app/_astro/e7_r_bd_ho_400x400_aNraD02FQj_Z2mwenL.webp",
             "fechaPublicacion": "2025-01-10"
+        },
+        {
+            "nombre": "Goblin Mine",
+            "descripcion": "El bot Goblin Mine en Telegram permite a los usuarios ganar criptomonedas TON mediante la minería de monedas virtuales. Los jugadores pueden mejorar sus minas y aumentar su producción diaria para alcanzar recompensas significativas.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "No",
+            "enlace": "https://t.me/GoblinMine_bot/start?startapp=1661848348",
+            "imagen": "https://academy-public.coinmarketcap.com/optimized-uploads/9ac15813dcbc4204bd04e8745f8e67de.jpeg",
+            "fechaPublicacion": "2025-01-14"
+        },
+        {
+            "nombre": "ORCMine",
+            "descripcion": "Nuevo bot de mineria similar a Goblin Mine",
+            "estado": "Activo",
+            "pago": "Desconocido",
+            "gratis": "Si",
+            "enlace": "https://t.me/orcmine_bot/play?startapp=1661848348&startApp=1661848348",
+            "imagen": "https://pbs.twimg.com/profile_images/1879204091475173385/Xgjo1uhL_400x400.jpg",
+            "fechaPublicacion": "2025-01-19"
         }
     ],
     "juegos": [
@@ -95,4 +78,4 @@
             "enlace": "https://www.coinex.com/en/register?refer_code=r8g3w"
         }
     ]
-        }
+}
