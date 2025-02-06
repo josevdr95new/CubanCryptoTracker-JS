@@ -3,6 +3,33 @@
 {
     "nombre": "MTT Sports",
     "descripcion": `
+        <style>
+            .price-info {
+                margin-top: 1.5rem;
+                padding: 1rem;
+                background-color: #f8f9fa;
+                border-left: 4px solid var(--accent);
+                border-radius: 4px;
+            }
+            .price-info h5 {
+                margin: 0 0 0.8rem 0;
+                color: var(--accent);
+                font-size: 1rem;
+            }
+            .price-info ul {
+                margin: 0;
+                padding-left: 1.2rem;
+            }
+            .price-info li {
+                margin-bottom: 0.4rem;
+            }
+            .price-info small {
+                display: block;
+                margin-top: 0.8rem;
+                color: #666;
+                font-size: 0.85rem;
+            }
+        </style>
         <p>Es un juego de póker online disponible para todos los apasionados y permite jugar muchos torneos al día de forma gratis. Todos pueden ganar su criptomoneda. Puedes ganar hasta BTC participando en torneos gratis.</p>
         <div class="price-info">
             <h5>Precio promedio del mercado informal (06/02/2025 00UTC):</h5>
@@ -20,7 +47,6 @@
     "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
     "fechaPublicacion": "2025-01-25"
 }
-
     ],
     "mineria": [
         {
