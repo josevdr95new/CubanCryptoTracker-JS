@@ -6,8 +6,7 @@ window.loadProjects = async () => {
   const projectsContainer = document.getElementById('projectsContainer');
   projectsContainer.innerHTML = '<p>Cargando proyectos...</p>';
   try {
-    // Agregar un parámetro único a la URL para evitar la caché
-    const url = 'https://josevdr95new.github.io/CubanCryptoTracker-JS/proyetos.json?nocache=' + new Date().getTime();
+    const url = 'https://josevdr95new.github.io/CubanCryptoTracker-JS/proyectos.json?nocache=' + new Date().getTime();
     const response = await fetch(url);
     if (!response.ok) throw new Error(`Error: ${response.status} - ${response.statusText}`);
     window.projectsData = await response.json();
@@ -26,7 +25,7 @@ const createProjectCard = (project, container) => {
     <div class="project-image"><img src="${project.imagen}" alt="${project.nombre}"></div>
     <div class="project-content">
       <h4>${project.nombre}</h4>
-      <p>${project.descripcion}</p>
+      <p style="white-space: pre-line">${project.descripcion.replace(/\\n/g, '\n')}</p>
       <p><strong>Estado:</strong> ${project.estado}</p>
       <p><strong>Pago:</strong> ${project.pago}</p>
       <p><strong>Gratis:</strong> ${project.gratis}</p>
@@ -37,6 +36,7 @@ const createProjectCard = (project, container) => {
   container.appendChild(projectCard);
 };
 
+// Resto del código sin cambios
 const filterProjects = () => {
   if (!window.projectsData) {
     console.error("Los datos de los proyectos no están disponibles.");
