@@ -1,14 +1,8 @@
 [
     {
-        "fecha": "2025-01-22",
+        "fecha": "2025-02-06",
         "img": null,
-        "descripcion": "¡La BETA v0.3 ya está disponible para descargar! Esta versión resuelve todos los problemas anteriores. Ten en cuenta que las versiones anteriores dejarán de funcionar. ¡No te quedes atrás y actualiza ahora!",
-        "enlace": "https://cubancrypto-tracker.pages.dev/"
-    },
-    {
-        "fecha": "2025-01-27",
-        "img": null,
-        "descripcion": "¡Ya cambiamos a nuestra nueva web oficial! Visítanos en el siguiente enlace para acceder a la última versión.",
+        "descripcion": "Se ha añadido el precio promedio del MTT en la sección de proyectos. Este valor es únicamente informativo y no representa una recomendación de inversión.",
         "enlace": "https://cubancrypto-tracker.pages.dev/"
     }
 ]
