@@ -3,6 +3,19 @@ const loadNews = async () => {
   const newsContainer = document.getElementById('newsContainer');
   newsContainer.innerHTML = '<p>Cargando noticias...</p>';
 
+  // Añadir estilos CSS directamente en el JS (solo para la fecha y hora)
+  const style = document.createElement('style');
+  style.textContent = `
+    .news-date {
+      font-size: 0.9em;
+      color: #666;
+      margin-top: 5px;
+      margin-bottom: 10px;
+      font-style: italic;
+    }
+  `;
+  document.head.appendChild(style); // Añadir el estilo al documento
+
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
     const uniqueParam = `?timestamp=${new Date().getTime()}`; // Agrega un parámetro único
@@ -38,11 +51,23 @@ const loadNews = async () => {
       const title = item.querySelector("title").textContent;
       const link = item.querySelector("link").textContent;
       const description = item.querySelector("description").textContent;
+      const pubDate = item.querySelector("pubDate").textContent;
+
+      // Formatear la fecha y hora
+      const date = new Date(pubDate);
+      const formattedDate = date.toLocaleDateString('es-ES', {
+        year: 'numeric',
+        month: 'long',
+        day: 'numeric',
+        hour: '2-digit',
+        minute: '2-digit'
+      });
 
       const newsItem = document.createElement('div');
       newsItem.className = 'news-item';
       newsItem.innerHTML = `
         <div class="news-title">${title}</div>
+        <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
         <a class="news-link" href="#" onclick="window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>
       `;
