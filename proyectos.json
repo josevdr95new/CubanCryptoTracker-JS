@@ -2,7 +2,23 @@
     "airdrop": [
         {
             "nombre": "MTT Sports",
-            "descripcion": "📅 12/02/2025 00:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.058 ↓3.33% (vs ayer: 0.060)\n🔹 CUP → MTT ➔ 21 ↓4.55% (vs ayer: 22)\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
+            "descripcion": "📅 **Fecha**: 12/02/2025 00:00 UTC | Mercado informal\n\n" +
+                           "💱 **TASAS DE CAMBIO MTT**\n" +
+                           "| Par      | Tasa Actual | Variación     | Valor Ayer  |\n" +
+                           "|----------|-------------|---------------|-------------|\n" +
+                           "| USDT→MTT | 0.058       | ↓3.33%        | 0.060       |\n" +
+                           "| CUP→MTT  | 21          | ↓4.55%        | 22          |\n\n" +
+                           "🛠️ **METODOLOGÍA**\n" +
+                           "| Componente      | Detalle                                  |\n" +
+                           "|-----------------|------------------------------------------|\n" +
+                           "| 🗃️ Fuentes      | Telegram/WhatsApp/FB + Valor oficial MTT/BB |\n" +
+                           "| 🤖 Procesamiento| IA + verificación manual                 |\n" +
+                           "| ⏱️ Actualización| 24-48h                                   |\n\n" +
+                           "⚠️ **ADVERTENCIAS**\n" +
+                           "• Precio promedio referencial\n" +
+                           "• Variaciones diarias en tasas\n" +
+                           "• No refleja operaciones en tiempo real\n" +
+                           "• Bajo ningún concepto es asesoramiento financiero",
             "estado": "Activo",
             "pago": "Sí",
             "gratis": "Sí",
@@ -11,6 +27,8 @@
             "fechaPublicacion": "2025-01-25"
         }
     ],
+
+}
     "mineria": [
         {
             "nombre": "GenkiMiner",
