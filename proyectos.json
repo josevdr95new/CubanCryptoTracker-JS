@@ -1,61 +1,62 @@
 {
-    "airdrop": [
-        {
-            "nombre": "MTT Sports",
-            "descripcion": "📅 12/02/2025 00:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.058 ↓3.33% (vs ayer: 0.060)\n🔹 CUP → MTT ➔ 21 ↓4.55% (vs ayer: 22)\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "Sí",
-            "enlace": "https://mtt.xyz/share/ab9e13a0",
-            "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
-            "fechaPublicacion": "2025-01-25"
-        }
-    ],
-    "mineria": [
-        {
-            "nombre": "GenkiMiner",
-            "descripcion": "GenkiMiner es un bot de Telegram que permite a los usuarios ganar USDT (Tether) realizando tareas y jugando. Este bot se ha vuelto popular debido a su mecánica de juego atractiva y la posibilidad de obtener ingresos pasivos.",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "Sí",
-            "enlace": "https://t.me/cBot/GenkiMiner?startapp=RfO_RalS",
-            "imagen": "https://www.findmini.app/_astro/e7_r_bd_ho_400x400_aNraD02FQj_Z2mwenL.webp",
-            "fechaPublicacion": "2025-01-10"
-        }
-    ],
-    "juegos": [
-        {
-            "nombre": "Sunflower Land",
-            "descripcion": "Sunflower Land es un juego play-to-earn donde puedes cultivar, recolectar y comerciar recursos. Lleva 2 años en línea y cuenta con una economía sostenible. Es necesario invertir para migrar las ganancias del juego normal a NFT.",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "Sí",
-            "enlace": "https://sunflower-land.com/play/?ref=30911",
-            "imagen": "https://images.ctfassets.net/the2mlmvkyaw/49vYX8z05Pui0bRC1BtWs3/fed4eb45be7941c0bc3108e965624d32/Sunflower_land.png",
-            "fechaPublicacion": "2025-01-09"
-        }
-    ],
-    "faucet": [],
-    "otros": [
-        {
-            "nombre": "FaucetPay",
-            "descripcion": "FaucetPay es una plataforma que permite recibir y retirar pequeñas cantidades de criptomonedas de faucets y otros servicios. Es útil para acumular fondos antes de transferirlos a una wallet principal.",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "Sí",
-            "enlace": "https://faucetpay.io/?r=408239",
-            "imagen": "https://faucetpay.io/static/media/wallet.2d6239fc.webp",
-            "fechaPublicacion": "2025-01-14"
-        },
-        {
-            "nombre": "Coinex",
-            "descripcion": "Coinex es un intercambio de criptomonedas que funciona para cubanos, permitiendo operaciones P2P y la verificación KYC.",
-            "estado": "Activo",
-            "pago": "Sí",
-            "gratis": "Sí",
-            "fechaPublicacion": "2025-01-15",
-            "imagen": "https://logowik.com/content/uploads/images/coinex9788.jpg",
-            "enlace": "https://www.coinex.com/en/register?refer_code=r8g3w"
-        }
-    ]
+  "airdrop": [
+    {
+      "nombre": "MTT Sports",
+      "descripcion": "📅 13/02/2025 00:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.067 ↑15.52% (vs anterior: 0.058)\n🔹 CUP → MTT ➔ 380 ↑1709.52% (vs anterior: 21)\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
+      "estado": "Activo",
+      "pago": "Sí",
+      "gratis": "Sí",
+      "enlace": "https://mtt.xyz/share/ab9e13a0",
+      "imagen": "https://www.thecryptoupdates.com/wp-content/uploads/2024/09/Untitled-design-1-960x560.jpg",
+      "fechaPublicacion": "2025-01-25"
+    }
+  ],
+  "mineria": [
+    {
+      "nombre": "GenkiMiner",
+      "descripcion": "GenkiMiner es un bot de Telegram que permite a los usuarios ganar USDT (Tether) realizando tareas y jugando. Este bot se ha vuelto popular debido a su mecánica de juego atractiva y la posibilidad de obtener ingresos pasivos.",
+      "estado": "Activo",
+      "pago": "Sí",
+      "gratis": "Sí",
+      "enlace": "https://t.me/cBot/GenkiMiner?startapp=RfO_RalS",
+      "imagen": "https://www.findmini.app/_astro/e7_r_bd_ho_400x400_aNraD02FQj_Z2mwenL.webp",
+      "fechaPublicacion": "2025-01-10"
+    }
+  ],
+  "juegos": [
+    {
+      "nombre": "Sunflower Land",
+      "descripcion": "Sunflower Land es un juego play-to-earn donde puedes cultivar, recolectar y comerciar recursos. Lleva 2 años en línea y cuenta con una economía sostenible. Es necesario invertir para migrar las ganancias del juego normal a NFT.",
+      "estado": "Activo",
+      "pago": "Sí",
+      "gratis": "Sí",
+      "enlace": "https://sunflower-land.com/play/?ref=30911",
+      "imagen": "https://images.ctfassets.net/the2mlmvkyaw/49vYX8z05Pui0bRC1BtWs3/fed4eb45be7941c0bc3108e965624d32/Sunflower_land.png",
+      "fechaPublicacion": "2025-01-09"
+    }
+  ],
+  "faucet": [],
+  "otros": [
+    {
+      "nombre": "FaucetPay",
+      "descripcion": "FaucetPay es una plataforma que permite recibir y retirar pequeñas cantidades de criptomonedas de faucets y otros servicios. Es útil para acumular fondos antes de transferirlos a una wallet principal.",
+      "estado": "Activo",
+      "pago": "Sí",
+      "gratis": "Sí",
+      "enlace": "https://faucetpay.io/?r=408239",
+      "imagen": "https://faucetpay.io/static/media/wallet.2d6239fc.webp",
+      "fechaPublicacion": "2025-01-14"
+    },
+    {
+      "nombre": "Coinex",
+      "descripcion": "Coinex es un intercambio de criptomonedas que funciona para cubanos, permitiendo operaciones P2P y la verificación KYC.",
+      "estado": "Activo",
+      "pago": "Sí",
+      "gratis": "Sí",
+      "fechaPublicacion": "2025-01-15",
+      "imagen": "https://logowik.com/content/uploads/images/coinex9788.jpg",
+      "enlace": "https://www.coinex.com/en/register?refer_code=r8g3w"
+    }
+  ]
+    }
 }
