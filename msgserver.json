@@ -2,14 +2,13 @@
     {
         "fecha": "2025-02-06",
         "img": null,
-        "descripcion": "Se ha añadido el precio promedio del MTT en la sección de proyectos. Este valor es únicamente informativo y no representa una recomendación de inversión.",
+        "descripcion": "Nueva actualización: Ahora puedes consultar el precio promedio del MTT en la sección de proyectos. Este dato es meramente informativo y no constituye asesoramiento financiero.",
         "enlace": "https://cubancrypto-tracker.pages.dev/"
-    }
-	
-	  {
+    },
+    {
         "fecha": "2025-02-23",
         "img": null,
-        "descripcion": "Sorteo de 10$, clic el botón leer más para ver toda la info.",
+        "descripcion": "¡Participa en nuestro sorteo exclusivo! Premio de $10 en criptoactivos. Haz clic en 'Leer más' para conocer las bases y requisitos del concurso.",
         "enlace": "https://forms.gle/6RS1PbZote6jwdL47"
     }
 ]
