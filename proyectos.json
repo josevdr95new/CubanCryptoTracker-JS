@@ -2,7 +2,7 @@
   "airdrop": [
 {
   "nombre": "MTT Sports",
-  "descripcion": "📅 26/02/2025 05:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.065\n🔹 CUP → MTT ➔ 23\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
+  "descripcion": "📅 27/02/2025 00:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.066\n🔹 CUP → MTT ➔ 24\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
   "estado": "Activo",
   "pago": "Sí",
   "gratis": "Sí",
@@ -24,16 +24,7 @@
     }
   ],
   "juegos": [
-    {
-      "nombre": "Sunflower Land",
-      "descripcion": "Sunflower Land es un juego play-to-earn donde puedes cultivar, recolectar y comerciar recursos. Lleva 2 años en línea y cuenta con una economía sostenible. Es necesario invertir para migrar las ganancias del juego normal a NFT.",
-      "estado": "Activo",
-      "pago": "Sí",
-      "gratis": "Sí",
-      "enlace": "https://sunflower-land.com/play/?ref=30911",
-      "imagen": "https://images.ctfassets.net/the2mlmvkyaw/49vYX8z05Pui0bRC1BtWs3/fed4eb45be7941c0bc3108e965624d32/Sunflower_land.png",
-      "fechaPublicacion": "2025-01-09"
-    }
+
   ],
   "faucet": [],
   "otros": [
