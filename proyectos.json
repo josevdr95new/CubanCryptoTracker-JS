@@ -2,7 +2,11 @@
   "airdrop": [
 {
   "nombre": "MTT Sports",
+<<<<<<< HEAD
   "descripcion": "📅 27/02/2025 04:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.066\n🔹 CUP → MTT ➔ 24\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
+=======
+  "descripcion": "📅 26/02/2025 05:00 UTC | Mercado informal\n──────────────\n💱 **TASA DE CAMBIO MTT**\n🔹 USDT → MTT ➔ 0.065\n🔹 CUP → MTT ➔ 23\n──────────────\n🛠️ **METODOLOGÍA**\n▸ 🗃️ Fuentes: Telegram/WhatsApp/FB + Valor oficial MTT/BB\n▸ 🤖 Procesamiento: IA + verificación manual\n▸ ⏱️ Actualización: 24-48h\n──────────────\n⚠️ **ADVERTENCIA**\n• Precio promedio referencial\n• Variaciones diarias en tasas\n• No refleja operaciones en tiempo real\n• Bajo ningún concepto es asesoramiento financiero",
+>>>>>>> 45e7babd2845868057be08e0967f001d0023bc70
   "estado": "Activo",
   "pago": "Sí",
   "gratis": "Sí",
