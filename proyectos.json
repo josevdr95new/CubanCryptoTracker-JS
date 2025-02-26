@@ -12,19 +12,19 @@
 }
   ],
   "mineria": [
-    {
-      "nombre": "GenkiMiner",
-      "descripcion": "GenkiMiner es un bot de Telegram que permite a los usuarios ganar USDT (Tether) realizando tareas y jugando. Este bot se ha vuelto popular debido a su mecánica de juego atractiva y la posibilidad de obtener ingresos pasivos.",
-      "estado": "Activo",
-      "pago": "Sí",
-      "gratis": "Sí",
-      "enlace": "https://t.me/cBot/GenkiMiner?startapp=RfO_RalS",
-      "imagen": "https://www.findmini.app/_astro/e7_r_bd_ho_400x400_aNraD02FQj_Z2mwenL.webp",
-      "fechaPublicacion": "2025-01-10"
-    }
+
   ],
   "juegos": [
-
+    {
+            "nombre": "Sunflower Land",
+            "descripcion": "Sunflower Land es un juego play-to-earn donde puedes cultivar, recolectar y comerciar recursos. Lleva 2 años en línea y cuenta con una economía sostenible. Es necesario invertir para migrar las ganancias del juego normal a NFT.",
+            "estado": "Activo",
+            "pago": "Sí",
+            "gratis": "Sí",
+            "enlace": "https://sunflower-land.com/play/?ref=30911",
+            "imagen": "https://images.ctfassets.net/the2mlmvkyaw/49vYX8z05Pui0bRC1BtWs3/fed4eb45be7941c0bc3108e965624d32/Sunflower_land.png",
+            "fechaPublicacion": "2025-01-09"
+        }
   ],
   "faucet": [],
   "otros": [
