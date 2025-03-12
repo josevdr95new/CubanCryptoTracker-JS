@@ -1,5 +1,5 @@
 document.getElementById('share-button').addEventListener('click', () => {
-    const text = encodeURIComponent('Visita CubanCrypto-Tracker en https://cubancrypto-tracker.pages.dev/');
+    const text = encodeURIComponent('Visita CubanCrypto-Tracker en https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker');
     const whatsappIntentUrl = `intent://send?text=${text}#Intent;scheme=whatsapp;package=com.whatsapp;end`;
     window.location.href = whatsappIntentUrl;
 });
