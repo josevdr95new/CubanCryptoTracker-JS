@@ -1,8 +1,8 @@
 [
     {
-        "fecha": "2025-03-11",
+        "fecha": "2025-02-06",
         "img": null,
-        "descripcion": "¡Versión final 1.0 disponible! Descarga la actualización oficial desde APKLIS. Las versiones beta anteriores mostraban datos erróneos (como el precio de algunas cryptos) y otros problemas reportados, los cuales han sido corregidos en esta versión estable. A partir de ahora, las versiones antiguas dejarán de funcionar. Esta actualización incluye todas las funciones originales y mejoras de rendimiento. Se recomienda actualizar inmediatamente para garantizar el correcto funcionamiento.",
-        "enlace": "https://www.apklis.cu/"
+        "descripcion": "Se ha añadido el precio promedio del MTT en la sección de proyectos. Este valor es únicamente informativo y no representa una recomendación de inversión.",
+        "enlace": "https://cubancrypto-tracker.pages.dev/"
     }
 ]
