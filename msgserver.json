@@ -4,5 +4,11 @@
         "img": null,
         "descripcion": "¡Versión final 1.0 disponible! Descarga la actualización oficial desde APKLIS. Las versiones beta anteriores mostraban datos erróneos (como el precio de algunas cryptos) y otros problemas reportados, los cuales han sido corregidos en esta versión estable. Esta actualización incluye todas las funciones originales y mejoras de rendimiento.",
         "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
+    },
+    {
+        "fecha": "2025-03-18",
+        "img": null,
+        "descripcion": "¡Actualización de emergencia v1.1 disponible! Se reparó un error crítico que impedía el acceso a la aplicación y se corrigió el mensaje de error de conexión. Además, se añadió una nueva función al menú lateral. Descarga la versión corregida desde APKLIS.",
+        "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
     }
 ]
