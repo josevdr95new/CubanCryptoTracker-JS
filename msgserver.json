@@ -10,5 +10,11 @@
         "img": null,
         "descripcion": "¡Actualización de emergencia v1.1 disponible! Se reparó un error crítico que impedía el acceso a la aplicación y se corrigió el mensaje de error de conexión. Además, se añadió una nueva función al menú lateral. Descarga la versión corregida desde APKLIS.",
         "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
+    },
+	 {
+        "fecha": "2025-03-19",
+        "img": null,
+        "descripcion": "Se está trabajando en el servidor puede que la app esté inactiva un tiempo (4H)",
+        "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
     }
 ]
