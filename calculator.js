@@ -1,5 +1,13 @@
 // calculator.js
 
+const formatPrice = (number) => {
+    // Formatea el número con 2 decimales, puntos para miles y comas para decimales
+    return number.toLocaleString('de-DE', {
+        minimumFractionDigits: 2,
+        maximumFractionDigits: 2
+    });
+};
+
 const calculateConversion = () => {
   const cryptoSelect = document.getElementById('cryptoSelect').value;
   const amountInput = parseFloat(document.getElementById('amountInput').value);
