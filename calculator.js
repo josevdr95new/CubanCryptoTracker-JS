@@ -1,86 +1,82 @@
 // calculator.js
 
-// Función para formatear números con puntos (miles) y comas (decimales)
+// ========== FUNCIÓN PARA FORMATEAR PRECIOS ========== //
 function formatPrice(number) {
+    if (isNaN(number)) return "0,00"; // Manejo de errores
+    
     return number.toLocaleString('de-DE', {
         minimumFractionDigits: 2,
         maximumFractionDigits: 2
     });
 }
 
-// Función principal de conversión
+// ========== FUNCIÓN PRINCIPAL DE CONVERSIÓN ========== //
 function calculateConversion() {
+    // Obtener valores de los inputs
     const cryptoSelect = document.getElementById('cryptoSelect').value;
     const amountInput = parseFloat(document.getElementById('amountInput').value);
     const currencySelect = document.getElementById('currencySelect').value;
     const conversionType = document.getElementById('conversionType').value;
 
+    // Validar entrada
     if (isNaN(amountInput) || amountInput <= 0) {
-        document.getElementById('resultText').textContent = 'Ingresa una cantidad válida.';
+        document.getElementById('resultText').textContent = '❌ Ingresa una cantidad válida.';
         return;
     }
 
+    // Validar precios
     if (!window.prices || !window.prices[cryptoSelect] || !window.prices.usdt) {
-        document.getElementById('resultText').textContent = 'Los precios no están disponibles. Intenta de nuevo más tarde.';
+        document.getElementById('resultText').textContent = '❌ Los precios no están disponibles.';
         return;
     }
 
+    // Variables para cálculo
     const cryptoPrice = window.prices[cryptoSelect];
     const usdtToCup = window.prices.usdt;
-    let result;
-    let resultText = '';
+    let result, resultText;
 
     try {
+        // Lógica de conversión
         if (conversionType === 'cryptoToCurrency') {
             if (currencySelect === 'cup') {
-                if (cryptoSelect === 'usdt') {
-                    result = amountInput * usdtToCup;
-                    resultText = `${amountInput} USDT = ${formatPrice(result)} CUP`;
-                } else {
-                    result = amountInput * cryptoPrice * usdtToCup;
-                    resultText = `${amountInput} ${cryptoSelect.toUpperCase()} = ${formatPrice(result)} CUP`;
-                }
-            } else if (currencySelect === 'usdt') {
-                if (cryptoSelect === 'usdt') {
-                    result = amountInput;
-                    resultText = `${amountInput} USDT = ${formatPrice(result)} USDT`;
-                } else {
-                    result = amountInput * cryptoPrice;
-                    resultText = `${amountInput} ${cryptoSelect.toUpperCase()} = ${formatPrice(result)} USDT`;
-                }
-            } else {
-                throw new Error('Moneda no válida seleccionada.');
+                result = (cryptoSelect === 'usdt') 
+                    ? amountInput * usdtToCup 
+                    : amountInput * cryptoPrice * usdtToCup;
+                resultText = `${amountInput} ${cryptoSelect.toUpperCase()} = ${formatPrice(result)} CUP`;
+            } 
+            else if (currencySelect === 'usdt') {
+                result = (cryptoSelect === 'usdt') 
+                    ? amountInput 
+                    : amountInput * cryptoPrice;
+                resultText = `${amountInput} ${cryptoSelect.toUpperCase()} = ${formatPrice(result)} USDT`;
             }
-        } else if (conversionType === 'currencyToCrypto') {
+        } 
+        else if (conversionType === 'currencyToCrypto') {
             if (currencySelect === 'cup') {
-                if (cryptoSelect === 'usdt') {
-                    result = amountInput / usdtToCup;
-                    resultText = `${amountInput} CUP = ${formatPrice(result)} USDT`;
-                } else {
-                    result = amountInput / usdtToCup / cryptoPrice;
-                    resultText = `${amountInput} CUP = ${formatPrice(result)} ${cryptoSelect.toUpperCase()}`;
-                }
-            } else if (currencySelect === 'usdt') {
-                if (cryptoSelect === 'usdt') {
-                    result = amountInput;
-                    resultText = `${amountInput} USDT = ${formatPrice(result)} USDT`;
-                } else {
-                    result = amountInput / cryptoPrice;
-                    resultText = `${amountInput} USDT = ${formatPrice(result)} ${cryptoSelect.toUpperCase()}`;
-                }
-            } else {
-                throw new Error('Moneda no válida seleccionada.');
+                result = (cryptoSelect === 'usdt') 
+                    ? amountInput / usdtToCup 
+                    : amountInput / (usdtToCup * cryptoPrice);
+                resultText = `${amountInput} CUP = ${formatPrice(result)} ${cryptoSelect.toUpperCase()}`;
+            } 
+            else if (currencySelect === 'usdt') {
+                result = (cryptoSelect === 'usdt') 
+                    ? amountInput 
+                    : amountInput / cryptoPrice;
+                resultText = `${amountInput} USDT = ${formatPrice(result)} ${cryptoSelect.toUpperCase()}`;
             }
-        } else {
-            throw new Error('Tipo de conversión no válido.');
         }
+
+        // Mostrar resultado
         document.getElementById('resultText').textContent = resultText;
+
     } catch (error) {
-        console.error('Error en la conversión:', error);
-        document.getElementById('resultText').textContent = error.message || 'Operación no válida.';
+        console.error("Error en calculateConversion:", error);
+        document.getElementById('resultText').textContent = '❌ Error en la conversión.';
     }
 }
 
-// Exportar funciones al ámbito global
-window.formatPrice = formatPrice;
-window.calculateConversion = calculateConversion;
+// ========== EXPORTAR FUNCIONES AL ÁMBITO GLOBAL ========== //
+if (typeof window !== 'undefined') {
+    window.formatPrice = formatPrice;
+    window.calculateConversion = calculateConversion;
+}
