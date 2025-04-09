@@ -1,5 +1,3 @@
-// calculator.js
-
 const formatPrice = (number) => {
     // Formatea el número con 2 decimales, puntos para miles y comas para decimales
     return number.toLocaleString('de-DE', {
