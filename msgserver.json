@@ -10,5 +10,11 @@
         "img": null,
         "descripcion": "¡Versión 1.3 disponible! Descarga la actualización oficial desde APKLIS.",
         "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
+    },
+		{
+        "fecha": "2025-04-10",
+        "img": null,
+        "descripcion": "Mantenimiento en cloudflare 48h de inactividad",
+        "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
     }
 ]
