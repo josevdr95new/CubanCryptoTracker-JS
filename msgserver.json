@@ -1,10 +1,4 @@
 [
-    {
-        "fecha": "2025-03-27",
-        "img": null,
-        "descripcion": "¡Versión 1.2 disponible! Descarga la actualización oficial desde APKLIS.",
-        "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
-    },
 	    {
         "fecha": "2025-04-08",
         "img": null,
@@ -12,9 +6,9 @@
         "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
     },
 		{
-        "fecha": "2025-04-10",
+        "fecha": "2025-04-11",
         "img": null,
-        "descripcion": "Cloudflare presenta problemas la apk solo funciona con vpn",
+        "descripcion": "Todo esta ok...",
         "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
     }
 ]
