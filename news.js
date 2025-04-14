@@ -20,7 +20,8 @@ const loadNews = async () => {
     const rssUrl = 'https://es.cointelegraph.com/rss';
     const uniqueParam = `?timestamp=${new Date().getTime()}`; // Agrega un parámetro único
     //const proxyUrl = `https://qvapay-proxy.josevdr95.workers.dev/?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
-      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
+    //const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
+	const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}&cache=default`;
 
     // Realizar la solicitud al proxy
     const response = await fetch(proxyUrl);
