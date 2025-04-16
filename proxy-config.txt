@@ -1,1 +1,1 @@
-https://qvapay-proxy.josevdr95.workers.dev/?url=
+https://api.allorigins.win/raw?url=
