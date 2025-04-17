@@ -62,7 +62,7 @@ const loadNews = async () => {
         <div class="news-description">${description}</div>
         <a class="news-link" href="${link}" 
            onclick="event.preventDefault(); 
-                    window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
+                    window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end'; 
                     setTimeout(() => window.location.href = '${link}', 250);">
           Leer más...
         </a>
@@ -105,7 +105,7 @@ const loadAppNews = async () => {
           ${item.enlace ? `
             <a href="${item.enlace}" 
                onclick="event.preventDefault(); 
-                        window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
+                        window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;end'; 
                         setTimeout(() => window.location.href = '${item.enlace}', 250);">
               Leer más...
             </a>
