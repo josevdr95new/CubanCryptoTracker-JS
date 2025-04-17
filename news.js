@@ -18,7 +18,6 @@ const loadNews = async () => {
 
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
-    const uniqueParam = `?timestamp=${new Date().getTime()}`;
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
 
     const response = await fetch(proxyUrl);
@@ -61,7 +60,7 @@ const loadNews = async () => {
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
         <a class="news-link" href="#" 
-           onclick="handleCustomIntent('${link.replace(/^https?:\/\//, '')}')">
+           onclick="handleCustomIntent('${link.replace(/^https?:\\/\\//, '')}')">
            Leer más...
         </a>
       `;
@@ -97,7 +96,7 @@ const loadAppNews = async () => {
           <p>${item.descripcion}</p>
           ${item.enlace ? `
             <a href="#" 
-               onclick="handleCustomIntent('${item.enlace.replace(/^https?:\/\//, '')}')">
+               onclick="handleCustomIntent('${item.enlace.replace(/^https?:\\/\\//, '')}')">
                Leer más...
             </a>` : ''}
         </div>
@@ -116,13 +115,13 @@ const loadAppNews = async () => {
   }
 };
 
-// Nueva función global para manejar intents
+// Función para abrir selector de apps con fallback seguro
 function handleCustomIntent(link) {
   const fallbackUrl = `https://${link}`;
   const intentUrl = `intent://${link}#Intent;scheme=https;action=android.intent.action.VIEW;category=android.intent.category.BROWSABLE;S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
 
   window.location.href = intentUrl;
-  
+
   setTimeout(() => {
     if (!document.hidden) {
       window.location.href = fallbackUrl;
@@ -132,18 +131,9 @@ function handleCustomIntent(link) {
 
 // Hacer las funciones accesibles globalmente
 window.loadNews = loadNews;
-window.showNewsModal = showNewsModal;
-window.loadAppNews = loadAppNews;
-window.handleCustomIntent = handleCustomIntent;
-
-// Función showModal (asumiendo que existe)
-const showModal = (modalId) => {
-  // Tu implementación existente de showModal
-  document.getElementById(modalId).style.display = 'block';
-};
-
-// Función showNewsModal actualizada
-const showNewsModal = () => {
-  showModal('news');
+window.showNewsModal = () => {
+  showModal('news'); // Asumo que showModal está definido en otro archivo
   loadNews();
 };
+window.loadAppNews = loadAppNews;
+window.handleCustomIntent = handleCustomIntent;
