@@ -101,7 +101,7 @@ const loadAppNews = async () => {
     // Mostrar solo las 5 noticias más recientes
     const recentMessages = messages.slice(0, 5);
     appNewsContainer.innerHTML = '';
-
+/*
     // Mostrar las noticias en el contenedor
     recentMessages.forEach((item, index) => {
       const newsItem = document.createElement('div');
@@ -115,6 +115,28 @@ const loadAppNews = async () => {
           ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>` : ''}
         </div>
       `;
+	  */
+	  
+	  recentMessages.forEach((item, index) => {
+  const newsItem = document.createElement('div');
+  newsItem.className = 'app-news-item';
+  newsItem.innerHTML = `
+    ${item.img ? `<img src="${item.img}" alt="Noticia">` : ''}
+    <div class="app-news-content">
+      <div class="news-date">${item.fecha}</div>
+      <h4>${item.titulo || 'Noticia'}</h4>
+      <p>${item.descripcion}</p>
+      ${item.enlace ? `
+        <a href="${item.enlace}" 
+           onclick="event.preventDefault(); 
+                    window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
+                    setTimeout(function() { window.location.href = '${item.enlace}'; }, 250);">
+          Leer más...
+        </a>
+      ` : ''}
+    </div>
+  `;
+});
       appNewsContainer.appendChild(newsItem);
 
       // Agregar un separador entre noticias (excepto después de la última)
