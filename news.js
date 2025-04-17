@@ -69,7 +69,7 @@ const loadNews = async () => {
         <div class="news-title">${title}</div>
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
-        <a class="news-link" href="#" onclick="window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Leer más...</a>
+        <a class="news-link" href="${link}" target="_blank" onclick="event.preventDefault(); window.open('${link}', '_blank');">Leer más...</a>
       `;
       newsContainer.appendChild(newsItem);
     });
@@ -91,7 +91,8 @@ const loadAppNews = async () => {
   try {
     const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json');
     const text = await response.text();
-    const messages = eval(text);
+    // Reemplazar eval() por JSON.parse() por seguridad
+    const messages = JSON.parse(text);
 
     // Ordenar las noticias por fecha (más recientes primero)
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
@@ -100,15 +101,20 @@ const loadAppNews = async () => {
     const recentMessages = messages.slice(0, 5);
     appNewsContainer.innerHTML = '';
 
-const newsItem = document.createElement('div');
-newsItem.className = 'news-item';
-newsItem.innerHTML = `
-  <div class="news-title">${title}</div>
-  <div class="news-date">${formattedDate}</div>
-  <div class="news-description">${description}</div>
-  <a class="news-link" href="${link}" target="_blank" onclick="event.preventDefault(); window.open('${link}', '_blank');">Leer más...</a>
-`;
-newsContainer.appendChild(newsItem);
+    // Mostrar las noticias en el contenedor
+    recentMessages.forEach((item, index) => {
+      const newsItem = document.createElement('div');
+      newsItem.className = 'app-news-item';
+      newsItem.innerHTML = `
+        ${item.img ? `<img src="${item.img}" alt="Noticia">` : ''}
+        <div class="app-news-content">
+          <div class="news-date">${item.fecha}</div>
+          <h4>${item.titulo || 'Noticia'}</h4>
+          <p>${item.descripcion}</p>
+          ${item.enlace ? `<a href="${item.enlace}" target="_blank" onclick="event.preventDefault(); window.open('${item.enlace}', '_blank');">Leer más...</a>` : ''}
+        </div>
+      `;
+      appNewsContainer.appendChild(newsItem);
 
       // Agregar un separador entre noticias (excepto después de la última)
       if (index < recentMessages.length - 1) {
