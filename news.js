@@ -111,7 +111,7 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>` : ''}
+          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Leer más...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);
