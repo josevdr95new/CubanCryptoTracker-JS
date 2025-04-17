@@ -106,7 +106,7 @@ newsItem.innerHTML = `
   <div class="news-title">${title}</div>
   <div class="news-date">${formattedDate}</div>
   <div class="news-description">${description}</div>
-  <a class="news-link" href="#" onclick="window.open('${link}', '_blank'); return false;">Leer más...</a>
+  <a class="news-link" href="${link}" target="_blank" onclick="event.preventDefault(); window.open('${link}', '_blank');">Leer más...</a>
 `;
 newsContainer.appendChild(newsItem);
 
