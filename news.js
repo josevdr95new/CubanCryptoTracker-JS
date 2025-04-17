@@ -111,7 +111,7 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace ? `<a href="${item.enlace}" target="_blank">Leer más...</a>`</a>` : ''}
+           ${item.enlace ? `<a href="${item.enlace}" target="_blank">Leer más...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);
