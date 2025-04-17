@@ -3,7 +3,7 @@ const loadNews = async () => {
   const newsContainer = document.getElementById('newsContainer');
   newsContainer.innerHTML = '<p>Cargando noticias...</p>';
 
-  // Añadir estilos CSS directamente en el JS (solo para la fecha y hora)
+  // Estilos CSS
   const style = document.createElement('style');
   style.textContent = `
     .news-date {
@@ -13,47 +13,36 @@ const loadNews = async () => {
       margin-bottom: 10px;
       font-style: italic;
     }
+    .news-item { margin-bottom: 20px; }
+    .news-link { color: #1a73e8; cursor: pointer; }
   `;
-  document.head.appendChild(style); // Añadir el estilo al documento
+  document.head.appendChild(style);
 
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
-    const uniqueParam = `?timestamp=${new Date().getTime()}`; // Agrega un parámetro único
+    const uniqueParam = `?timestamp=${new Date().getTime()}`;
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
 
-    // Realizar la solicitud al proxy
     const response = await fetch(proxyUrl);
+    if (!response.ok) throw new Error(`Error: ${response.status}`);
 
-    // Verificar si la respuesta es válida
-    if (!response.ok) {
-      throw new Error(`Error en la solicitud: ${response.status} - ${response.statusText}`);
-    }
-
-    // Obtener el contenido del RSS como texto
     const rssText = await response.text();
-
-    // Parsear el contenido del RSS como XML
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(rssText, "text/xml");
 
-    // Verificar si el XML es válido
-    const errorNode = xmlDoc.querySelector('parsererror');
-    if (errorNode) {
-      throw new Error('El contenido del RSS no es un XML válido.');
+    if (xmlDoc.querySelector('parsererror')) {
+      throw new Error('XML inválido');
     }
 
-    // Obtener los elementos "item" del RSS
     const items = xmlDoc.querySelectorAll("item");
     newsContainer.innerHTML = '';
 
-    // Mostrar las noticias en el contenedor
     items.forEach(item => {
       const title = item.querySelector("title").textContent;
       const link = item.querySelector("link").textContent;
       const description = item.querySelector("description").textContent;
       const pubDate = item.querySelector("pubDate").textContent;
 
-      // Formatear la fecha y hora
       const date = new Date(pubDate);
       const formattedDate = date.toLocaleDateString('es-ES', {
         year: 'numeric',
@@ -69,19 +58,15 @@ const loadNews = async () => {
         <div class="news-title">${title}</div>
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
-        <a class="news-link" href="#" onclick="window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>
+        <a class="news-link" onclick="handleLinkClick('${link}')">Leer más...</a>
       `;
       newsContainer.appendChild(newsItem);
     });
-  } catch (error) {
-    console.error('Error cargando noticias:', error);
-    newsContainer.innerHTML = '<p>Error al cargar las noticias. Inténtalo de nuevo más tarde.</p>';
-  }
-};
 
-const showNewsModal = () => {
-  showModal('news');
-  loadNews();
+  } catch (error) {
+    console.error('Error:', error);
+    newsContainer.innerHTML = '<p>Error al cargar noticias</p>';
+  }
 };
 
 const loadAppNews = async () => {
@@ -93,14 +78,10 @@ const loadAppNews = async () => {
     const text = await response.text();
     const messages = eval(text);
 
-    // Ordenar las noticias por fecha (más recientes primero)
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-
-    // Mostrar solo las 5 noticias más recientes
     const recentMessages = messages.slice(0, 5);
     appNewsContainer.innerHTML = '';
 
-    // Mostrar las noticias en el contenedor
     recentMessages.forEach((item, index) => {
       const newsItem = document.createElement('div');
       newsItem.className = 'app-news-item';
@@ -110,25 +91,62 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>` : ''}
+          ${item.enlace ? `<a onclick="handleLinkClick('${item.enlace}')">Leer más...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);
 
-      // Agregar un separador entre noticias (excepto después de la última)
       if (index < recentMessages.length - 1) {
         const separator = document.createElement('hr');
         separator.className = 'news-separator';
         appNewsContainer.appendChild(separator);
       }
     });
+
   } catch (error) {
-    console.error('Error cargando noticias de la app:', error);
-    appNewsContainer.innerHTML = '<p>Error al cargar las noticias de la app.</p>';
+    console.error('Error:', error);
+    appNewsContainer.innerHTML = '<p>Error al cargar noticias</p>';
   }
 };
 
-// Hacer las funciones accesibles globalmente
+// Función global mejorada para Android 12+
+window.handleLinkClick = (url) => {
+  const cleanedUrl = url.replace(/^https?:\/\//, '').split('#')[0];
+  const fallbackUrl = `https://${cleanedUrl}`;
+  
+  try {
+    const intentUrl = `intent://${cleanedUrl}#Intent;scheme=https;package=com.android.chrome;S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
+    
+    // Método mejorado para lanzar intents
+    const anchor = document.createElement('a');
+    anchor.href = intentUrl;
+    anchor.style.display = 'none';
+    document.body.appendChild(anchor);
+    anchor.click();
+    document.body.removeChild(anchor);
+
+    // Fallback inteligente
+    setTimeout(() => {
+      if (!document.hidden) {
+        const newWindow = window.open('', '_blank');
+        if (newWindow) {
+          newWindow.location.href = fallbackUrl;
+        } else {
+          window.location.href = fallbackUrl;
+        }
+      }
+    }, 1000);
+    
+  } catch (e) {
+    window.open(fallbackUrl, '_blank');
+  }
+  return false;
+};
+
+// Funciones globales
 window.loadNews = loadNews;
-window.showNewsModal = showNewsModal;
 window.loadAppNews = loadAppNews;
+window.showNewsModal = () => {
+  showModal('news');
+  loadNews();
+};
