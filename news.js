@@ -1,146 +1,70 @@
 // news.js
 const loadNews = async () => {
   const newsContainer = document.getElementById('newsContainer');
-  newsContainer.innerHTML = '<div class="loading-spinner"></div>';
+  newsContainer.innerHTML = '<p>Cargando noticias...</p>';
 
-  // Añadir estilos CSS en modo oscuro
+  // Añadir estilos CSS simples
   const style = document.createElement('style');
   style.textContent = `
-    /* Contenedores */
-    #newsContainer, #appNewsContainer {
-      display: grid;
-      gap: 1.5rem;
-      padding: 1rem;
-      max-height: 80vh;
-      overflow-y: auto;
-      background-color: #1a1a1a;
-      color: #e0e0e0;
-    }
-
-    /* Spinner de carga */
-    .loading-spinner {
-      border: 4px solid rgba(255, 255, 255, 0.1);
-      border-radius: 50%;
-      border-top: 4px solid #3b82f6;
-      width: 40px;
-      height: 40px;
-      animation: spin 1s linear infinite;
-      margin: 2rem auto;
-    }
-
-    @keyframes spin {
-      0% { transform: rotate(0deg); }
-      100% { transform: rotate(360deg); }
-    }
-
-    /* Items de noticias */
-    .news-item, .app-news-item {
+    .news-item {
       background: #2d2d2d;
-      border-radius: 8px;
-      padding: 1.5rem;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-      transition: all 0.3s ease;
-      border: 1px solid #333;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+      border-left: 4px solid #3b82f6;
     }
-
-    .news-item:hover, .app-news-item:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
-      background: #333;
+    
+    .news-title {
+      color: #fff;
+      font-size: 1.1rem;
+      margin: 0 0 5px 0;
     }
-
-    /* Títulos */
-    .news-title, .app-news-content h4 {
-      color: #ffffff;
-      font-size: 1.2rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-      line-height: 1.4;
-    }
-
-    /* Fechas */
+    
     .news-date {
-      color: #a0a0a0;
-      font-size: 0.85rem;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
+      color: #aaa;
+      font-size: 0.8rem;
+      margin: 0 0 10px 0;
       font-style: italic;
     }
-
-    /* Descripciones */
-    .news-description, .app-news-content p {
-      color: #b0b0b0;
-      line-height: 1.6;
-      margin-bottom: 1rem;
-      font-size: 0.95rem;
+    
+    .news-description {
+      color: #ccc;
+      font-size: 0.9rem;
+      line-height: 1.4;
+      margin: 0 0 10px 0;
     }
-
-    /* Enlaces */
-    .news-link, .app-news-content a {
-      color: #5d9eff;
+    
+    .news-link {
+      color: #3b82f6;
       text-decoration: none;
-      font-weight: 500;
-      display: inline-block;
-      transition: color 0.2s ease;
+      font-size: 0.9rem;
     }
-
-    .news-link:hover, .app-news-content a:hover {
-      color: #7ab1ff;
+    
+    .news-link:hover {
       text-decoration: underline;
     }
-
-    /* Imágenes en noticias de app */
+    
+    .app-news-item {
+      background: #2d2d2d;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 5px;
+    }
+    
     .app-news-item img {
-      width: 100%;
-      max-height: 200px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 1rem;
-      border: 1px solid #444;
+      max-width: 100%;
+      border-radius: 3px;
+      margin-bottom: 10px;
     }
-
-    /* Separadores */
+    
+    .app-news-content h4 {
+      color: #fff;
+      margin: 5px 0;
+    }
+    
     .news-separator {
-      border: none;
-      height: 1px;
-      background: #444;
-      margin: 1rem 0;
-    }
-
-    /* Mensajes de error */
-    .error-message {
-      color: #ff6b6b;
-      text-align: center;
-      padding: 1rem;
-    }
-
-    .retry-button {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 0.5rem 1rem;
-      border-radius: 4px;
-      margin-top: 0.5rem;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .retry-button:hover {
-      background: #2563eb;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .news-item, .app-news-item {
-        padding: 1rem;
-      }
-      
-      #newsContainer, #appNewsContainer {
-        padding: 0.5rem;
-        max-height: 70vh;
-      }
+      border-color: #444;
+      margin: 10px 0;
     }
   `;
   document.head.appendChild(style);
@@ -169,10 +93,10 @@ const loadNews = async () => {
     newsContainer.innerHTML = '';
 
     items.forEach(item => {
-      const title = item.querySelector("title")?.textContent || 'Sin título';
-      const link = item.querySelector("link")?.textContent || '#';
-      const description = item.querySelector("description")?.textContent || 'Sin descripción disponible';
-      const pubDate = item.querySelector("pubDate")?.textContent || new Date().toISOString();
+      const title = item.querySelector("title").textContent;
+      const link = item.querySelector("link").textContent;
+      const description = item.querySelector("description").textContent;
+      const pubDate = item.querySelector("pubDate").textContent;
 
       const date = new Date(pubDate);
       const formattedDate = date.toLocaleDateString('es-ES', {
@@ -186,34 +110,32 @@ const loadNews = async () => {
       const newsItem = document.createElement('div');
       newsItem.className = 'news-item';
       newsItem.innerHTML = `
-        <h3 class="news-title">${title}</h3>
+        <div class="news-title">${title}</div>
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
-        <a class="news-link" href="${link}" target="_blank" rel="noopener noreferrer">Leer más...</a>
+        <a class="news-link" href="#" onclick="window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>
       `;
       newsContainer.appendChild(newsItem);
     });
   } catch (error) {
     console.error('Error cargando noticias:', error);
-    newsContainer.innerHTML = `
-      <div class="error-message">
-        <p>Error al cargar las noticias. Inténtalo de nuevo más tarde.</p>
-        <button onclick="loadNews()" class="retry-button">Reintentar</button>
-      </div>
-    `;
+    newsContainer.innerHTML = '<p>Error al cargar las noticias. Inténtalo de nuevo más tarde.</p>';
   }
+};
+
+const showNewsModal = () => {
+  showModal('news');
+  loadNews();
 };
 
 const loadAppNews = async () => {
   const appNewsContainer = document.getElementById('appNewsContainer');
-  appNewsContainer.innerHTML = '<div class="loading-spinner"></div>';
+  appNewsContainer.innerHTML = '<p>Cargando noticias...</p>';
 
   try {
     const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json');
-    if (!response.ok) throw new Error('Error al cargar noticias de la app');
-    
     const text = await response.text();
-    const messages = JSON.parse(text);
+    const messages = eval(text);
 
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
     const recentMessages = messages.slice(0, 5);
@@ -223,12 +145,12 @@ const loadAppNews = async () => {
       const newsItem = document.createElement('div');
       newsItem.className = 'app-news-item';
       newsItem.innerHTML = `
-        ${item.img ? `<img src="${item.img}" alt="${item.titulo || 'Noticia'}">` : ''}
+        ${item.img ? `<img src="${item.img}" alt="Noticia">` : ''}
         <div class="app-news-content">
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
-          <p>${item.descripcion || ''}</p>
-          ${item.enlace ? `<a href="${item.enlace}" target="_blank" rel="noopener noreferrer">Leer más...</a>` : ''}
+          <p>${item.descripcion}</p>
+          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);
@@ -241,27 +163,10 @@ const loadAppNews = async () => {
     });
   } catch (error) {
     console.error('Error cargando noticias de la app:', error);
-    appNewsContainer.innerHTML = `
-      <div class="error-message">
-        <p>Error al cargar las noticias de la app.</p>
-        <button onclick="loadAppNews()" class="retry-button">Reintentar</button>
-      </div>
-    `;
+    appNewsContainer.innerHTML = '<p>Error al cargar las noticias de la app.</p>';
   }
 };
 
-const showNewsModal = () => {
-  showModal('news');
-  loadNews();
-};
-
-// Hacer las funciones accesibles globalmente
 window.loadNews = loadNews;
 window.showNewsModal = showNewsModal;
 window.loadAppNews = loadAppNews;
-
-// Cargar noticias al iniciar si el contenedor existe
-document.addEventListener('DOMContentLoaded', () => {
-  if (document.getElementById('newsContainer')) loadNews();
-  if (document.getElementById('appNewsContainer')) loadAppNews();
-});
