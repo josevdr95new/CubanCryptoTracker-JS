@@ -61,9 +61,7 @@ const loadNews = async () => {
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
         <a class="news-link" href="${link}" 
-           onclick="event.preventDefault(); 
-                    window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
-                    setTimeout(() => window.location.href = '${link}', 250);">
+           onclick="event.preventDefault(); window.open('${link}', '_blank');">
           Leer más...
         </a>
       `;
@@ -75,10 +73,7 @@ const loadNews = async () => {
   }
 };
 
-const showNewsModal = () => {
-  showModal('news');
-  loadNews();
-};
+// ... (las otras funciones permanecen igual hasta loadAppNews)
 
 const loadAppNews = async () => {
   const appNewsContainer = document.getElementById('appNewsContainer');
@@ -104,9 +99,7 @@ const loadAppNews = async () => {
           <p>${item.descripcion}</p>
           ${item.enlace ? `
             <a href="${item.enlace}" 
-               onclick="event.preventDefault(); 
-                        window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
-                        setTimeout(() => window.location.href = '${item.enlace}', 250);">
+               onclick="event.preventDefault(); window.open('${item.enlace}', '_blank');">
               Leer más...
             </a>
           ` : ''}
