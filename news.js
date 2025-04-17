@@ -69,7 +69,7 @@ const loadNews = async () => {
         <div class="news-title">${title}</div>
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
-        <a class="news-link" href="${link}" target="_blank" onclick="event.preventDefault(); window.open('${link}', '_blank');">Leer más...</a>
+        <a class="news-link" href="#" onclick="window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Leer más...</a>
       `;
       newsContainer.appendChild(newsItem);
     });
@@ -91,8 +91,7 @@ const loadAppNews = async () => {
   try {
     const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json');
     const text = await response.text();
-    // Reemplazar eval() por JSON.parse() por seguridad
-    const messages = JSON.parse(text);
+    const messages = eval(text);
 
     // Ordenar las noticias por fecha (más recientes primero)
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
@@ -111,7 +110,7 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace ? `<a href="${item.enlace}" target="_blank" onclick="event.preventDefault(); window.open('${item.enlace}', '_blank');">Leer más...</a>` : ''}
+          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);
