@@ -61,7 +61,7 @@ const loadNews = async () => {
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
         <a class="news-link" href="${link}" 
-           onclick="event.preventDefault(); window.open('${link}', '_blank');">
+           onclick="openExternalLink('${link}'); return false;">
           Leer más...
         </a>
       `;
@@ -102,7 +102,7 @@ const loadAppNews = async () => {
           <p>${item.descripcion}</p>
           ${item.enlace ? `
             <a href="${item.enlace}" 
-               onclick="event.preventDefault(); window.open('${item.enlace}', '_blank');">
+               onclick="openExternalLink('${item.enlace}'); return false;">
               Leer más...
             </a>
           ` : ''}
@@ -122,7 +122,39 @@ const loadAppNews = async () => {
   }
 };
 
+// Función para abrir enlaces en navegador externo
+const openExternalLink = (url) => {
+  // Método 1: Intenta usar la interfaz Android (si está disponible)
+  if (window.Android) {
+    // Si la app proporciona una interfaz Android
+    window.Android.openUrl(url);
+    return;
+  }
+  
+  // Método 2: Usa window.open con _system
+  try {
+    window.open(url, '_system');
+    return;
+  } catch (e) {
+    console.error('Error al abrir con _system', e);
+  }
+  
+  // Método 3: Para WebView estándar
+  try {
+    const a = document.createElement('a');
+    a.setAttribute('href', url);
+    a.setAttribute('target', '_blank');
+    a.setAttribute('rel', 'noopener noreferrer');
+    a.click();
+  } catch (e) {
+    console.error('Error al abrir enlace externo', e);
+    // Última opción, intenta redirigir
+    window.location.href = url;
+  }
+};
+
 // Hacer las funciones accesibles globalmente
 window.loadNews = loadNews;
 window.showNewsModal = showNewsModal;
 window.loadAppNews = loadAppNews;
+window.openExternalLink = openExternalLink;
