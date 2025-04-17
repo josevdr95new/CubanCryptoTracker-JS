@@ -73,7 +73,10 @@ const loadNews = async () => {
   }
 };
 
-// ... (las otras funciones permanecen igual hasta loadAppNews)
+const showNewsModal = () => {
+  showModal('news');
+  loadNews();
+};
 
 const loadAppNews = async () => {
   const appNewsContainer = document.getElementById('appNewsContainer');
