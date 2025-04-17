@@ -14,48 +14,37 @@ const loadNews = async () => {
       font-style: italic;
     }
   `;
-  document.head.appendChild(style); // Añadir el estilo al documento
+  document.head.appendChild(style);
 
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
-    const uniqueParam = `?timestamp=${new Date().getTime()}`; // Agrega un parámetro único
-    //const proxyUrl = `https://qvapay-proxy.josevdr95.workers.dev/?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
+    const uniqueParam = `?timestamp=${new Date().getTime()}`;
     const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
-	//const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}&cache=default`;
 
-    // Realizar la solicitud al proxy
     const response = await fetch(proxyUrl);
 
-    // Verificar si la respuesta es válida
     if (!response.ok) {
       throw new Error(`Error en la solicitud: ${response.status} - ${response.statusText}`);
     }
 
-    // Obtener el contenido del RSS como texto
     const rssText = await response.text();
-
-    // Parsear el contenido del RSS como XML
     const parser = new DOMParser();
     const xmlDoc = parser.parseFromString(rssText, "text/xml");
 
-    // Verificar si el XML es válido
     const errorNode = xmlDoc.querySelector('parsererror');
     if (errorNode) {
       throw new Error('El contenido del RSS no es un XML válido.');
     }
 
-    // Obtener los elementos "item" del RSS
     const items = xmlDoc.querySelectorAll("item");
     newsContainer.innerHTML = '';
 
-    // Mostrar las noticias en el contenedor
     items.forEach(item => {
       const title = item.querySelector("title").textContent;
       const link = item.querySelector("link").textContent;
       const description = item.querySelector("description").textContent;
       const pubDate = item.querySelector("pubDate").textContent;
 
-      // Formatear la fecha y hora
       const date = new Date(pubDate);
       const formattedDate = date.toLocaleDateString('es-ES', {
         year: 'numeric',
@@ -71,7 +60,12 @@ const loadNews = async () => {
         <div class="news-title">${title}</div>
         <div class="news-date">${formattedDate}</div>
         <div class="news-description">${description}</div>
-        <a class="news-link" href="#" onclick="window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>
+        <a class="news-link" href="${link}" 
+           onclick="event.preventDefault(); 
+                    window.location.href = 'intent://${link.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
+                    setTimeout(() => window.location.href = '${link}', 250);">
+          Leer más...
+        </a>
       `;
       newsContainer.appendChild(newsItem);
     });
@@ -95,14 +89,10 @@ const loadAppNews = async () => {
     const text = await response.text();
     const messages = eval(text);
 
-    // Ordenar las noticias por fecha (más recientes primero)
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
-
-    // Mostrar solo las 5 noticias más recientes
     const recentMessages = messages.slice(0, 5);
     appNewsContainer.innerHTML = '';
-/*
-    // Mostrar las noticias en el contenedor
+
     recentMessages.forEach((item, index) => {
       const newsItem = document.createElement('div');
       newsItem.className = 'app-news-item';
@@ -112,34 +102,18 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end'">Leer más...</a>` : ''}
+          ${item.enlace ? `
+            <a href="${item.enlace}" 
+               onclick="event.preventDefault(); 
+                        window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
+                        setTimeout(() => window.location.href = '${item.enlace}', 250);">
+              Leer más...
+            </a>
+          ` : ''}
         </div>
       `;
-	  */
-	  
-	  recentMessages.forEach((item, index) => {
-  const newsItem = document.createElement('div');
-  newsItem.className = 'app-news-item';
-  newsItem.innerHTML = `
-    ${item.img ? `<img src="${item.img}" alt="Noticia">` : ''}
-    <div class="app-news-content">
-      <div class="news-date">${item.fecha}</div>
-      <h4>${item.titulo || 'Noticia'}</h4>
-      <p>${item.descripcion}</p>
-      ${item.enlace ? `
-        <a href="${item.enlace}" 
-           onclick="event.preventDefault(); 
-                    window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'; 
-                    setTimeout(function() { window.location.href = '${item.enlace}'; }, 250);">
-          Leer más...
-        </a>
-      ` : ''}
-    </div>
-  `;
-});
       appNewsContainer.appendChild(newsItem);
 
-      // Agregar un separador entre noticias (excepto después de la última)
       if (index < recentMessages.length - 1) {
         const separator = document.createElement('hr');
         separator.className = 'news-separator';
