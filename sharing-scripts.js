@@ -8,9 +8,3 @@ document.getElementById('send-email-button').addEventListener('click', () => {
     const emailIntent = "intent://send?to=CubanCrypto-Tracker@proton.me#Intent;scheme=mailto;end";
     window.location.href = emailIntent;
 });
-
-document.getElementById('visit-website-button').addEventListener('click', () => {
-    const url = "https://cubancrypto-tracker.pages.dev/";
-    const intentUrl = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;end`;
-    window.location.href = intentUrl;
-});
