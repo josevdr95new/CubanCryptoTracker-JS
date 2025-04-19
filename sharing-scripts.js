@@ -1,16 +1,18 @@
+// sharing-scripts.js
 document.getElementById('share-button').addEventListener('click', () => {
     const text = encodeURIComponent('Visita CubanCrypto-Tracker en https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker');
-    const whatsappIntentUrl = `intent://send?text=${text}#Intent;scheme=whatsapp;package=com.whatsapp;end`;
-    window.location.href = whatsappIntentUrl;
+    const fallbackUrl = `https://api.whatsapp.com/send?text=${text}`;
+    // Intent mejorado para WhatsApp
+    window.location.href = `intent://send?text=${text}#Intent;action=android.intent.action.SEND;type=text/plain;scheme=https;package=com.whatsapp;S.browser_fallback_url=${encodeURIComponent(fallbackUrl)};end`;
 });
 
 document.getElementById('send-email-button').addEventListener('click', () => {
-    const emailIntent = "intent://send?to=CubanCrypto-Tracker@proton.me#Intent;scheme=mailto;package=com.google.android.gm;end";
-    window.location.href = emailIntent;
+    // Esquema universal mailto (sin paquete específico)
+    window.location.href = "mailto:CubanCrypto-Tracker@proton.me?subject=Contacto";
 });
 
 document.getElementById('visit-website-button').addEventListener('click', () => {
     const url = "https://cubancrypto-tracker.pages.dev/";
-    const intentUrl = `intent://${url.replace(/^https?:\/\//, '')}#Intent;scheme=https;package=com.android.chrome;end`;
-    window.location.href = intentUrl;
+    // Intent con fallback al navegador predeterminado
+    window.location.href = `intent://${url.replace('https://', '')}#Intent;scheme=https;action=android.intent.action.VIEW;S.browser_fallback_url=${encodeURIComponent(url)};end`;
 });
