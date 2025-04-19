@@ -135,7 +135,7 @@ const loadAppNews = async () => {
   try {
     const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json');
     const text = await response.text();
-    const messages = eval(text);
+    const messages = JSON.parse(text); // Cambiado de eval() a JSON.parse()
 
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
     const recentMessages = messages.slice(0, 5);
