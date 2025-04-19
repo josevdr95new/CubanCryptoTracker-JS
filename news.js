@@ -68,19 +68,31 @@ const loadNews = async (forceRefresh = false) => {
     }
 
     /* Estilos para el botón de actualización */
+    .button-container {
+      display: flex;
+      justify-content: flex-end;
+      padding: 0;
+      position: relative;
+      height: 30px;
+      margin-bottom: 5px;
+    }
+
     .refresh-button {
       background: #3b82f6;
       color: white;
       border: none;
-      padding: 8px 15px;
+      padding: 5px 10px;
       border-radius: 20px;
       cursor: pointer;
-      font-size: 0.9rem;
-      margin: 10px 0;
+      font-size: 0.8rem;
+      margin: 5px 0;
       display: flex;
       align-items: center;
-      gap: 8px;
+      gap: 5px;
       transition: all 0.3s ease;
+      position: sticky;
+      top: 10px;
+      z-index: 100;
     }
 
     .refresh-button:hover {
@@ -97,6 +109,8 @@ const loadNews = async (forceRefresh = false) => {
     }
 
     .refresh-button svg {
+      width: 12px;
+      height: 12px;
       transition: transform 0.5s ease;
     }
 
@@ -108,12 +122,6 @@ const loadNews = async (forceRefresh = false) => {
       from { transform: rotate(0deg); }
       to { transform: rotate(360deg); }
     }
-
-    .button-container {
-      display: flex;
-      justify-content: flex-end;
-      padding: 0 10px;
-    }
   `;
   document.head.appendChild(style);
 
@@ -123,7 +131,7 @@ const loadNews = async (forceRefresh = false) => {
     buttonContainer.className = 'button-container';
     buttonContainer.innerHTML = `
       <button class="refresh-button" id="refreshNewsButton" onclick="forceRefreshNews()">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M23 4v6h-6M1 20v-6h6"/>
           <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
         </svg>
