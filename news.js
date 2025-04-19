@@ -150,7 +150,7 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace && item.enlace.trim() !== '' ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Visitar...</a>` : ''}
+          ${item.enlace && item.enlace.trim() !== '' ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Clic para descargar...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);

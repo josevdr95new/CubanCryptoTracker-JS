@@ -1,20 +1,9 @@
 [
     {
-        "fecha": "2025-04-08",
+        "fecha": "2025-04-19",
         "img": null,
-        "descripcion": "¡Versión 1.3 disponible! Descarga la actualización oficial desde APKLIS.",
+        "descripcion": "¡Versión 1.4 disponible! Descarga la actualización oficial (obligatoria) desde APKLIS.",
         "enlace": "https://www.apklis.cu/application/appinventor.ai_josevdr95.CubanCrypto_Tracker"
-    },
-    {
-        "fecha": "2025-04-10",
-        "img": null,
-        "descripcion": "Cloudflare con problemas, se está trabajando pero puede tomar días. Mientras tanto la apk está en servicio intermitente hasta nuevo aviso",
-        "enlace": ""
-    },
-    {
-        "fecha": "2025-04-14",
-        "img": null,
-        "descripcion": "El problema continúa, espero que se logre arreglar para el lunes o enviaré una nueva actualización para resolverlo.",
-        "enlace": ""
     }
+
 ]
