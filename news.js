@@ -72,7 +72,8 @@ const loadNews = async () => {
   try {
     const rssUrl = 'https://es.cointelegraph.com/rss';
     const uniqueParam = `?timestamp=${new Date().getTime()}`;
-    const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
+    //const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl + uniqueParam)}`;
+	 const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
 
     const response = await fetch(proxyUrl);
 
