@@ -135,7 +135,7 @@ const loadAppNews = async () => {
   try {
     const response = await fetch('https://josevdr95new.github.io/CubanCryptoTracker-JS/msgserver.json');
     const text = await response.text();
-    const messages = JSON.parse(text); 
+    const messages = JSON.parse(text);
 
     messages.sort((a, b) => new Date(b.fecha) - new Date(a.fecha));
     const recentMessages = messages.slice(0, 5);
@@ -150,7 +150,7 @@ const loadAppNews = async () => {
           <div class="news-date">${item.fecha}</div>
           <h4>${item.titulo || 'Noticia'}</h4>
           <p>${item.descripcion}</p>
-          ${item.enlace ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Leer más...</a>` : ''}
+          ${item.enlace && item.enlace.trim() !== '' ? `<a href="#" onclick="window.location.href = 'intent://${item.enlace.replace(/^https?:\/\//, '')}#Intent;scheme=https;end'">Leer más...</a>` : ''}
         </div>
       `;
       appNewsContainer.appendChild(newsItem);
