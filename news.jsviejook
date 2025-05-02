@@ -114,36 +114,6 @@ const loadNews = async (forceRefresh = false) => {
       justify-content: flex-end;
       padding: 0 10px;
     }
-
-    /* Estilos para el mensaje de error */
-    .error-container {
-      text-align: center;
-      padding: 20px;
-    }
-
-    .error-message {
-      color: #ff6b6b;
-      margin-bottom: 15px;
-    }
-
-    .retry-button {
-      background: #3b82f6;
-      color: white;
-      border: none;
-      padding: 8px 15px;
-      border-radius: 20px;
-      cursor: pointer;
-      font-size: 0.9rem;
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      transition: all 0.3s ease;
-    }
-
-    .retry-button:hover {
-      background: #2563eb;
-    }
   `;
   document.head.appendChild(style);
 
@@ -217,18 +187,7 @@ const loadNews = async (forceRefresh = false) => {
     });
   } catch (error) {
     console.error('Error cargando noticias:', error);
-    newsContainer.innerHTML = `
-      <div class="error-container">
-        <p class="error-message">Error al cargar las noticias. Inténtalo de nuevo.</p>
-        <button class="retry-button" onclick="forceRefreshNews()"> <!-- Cambiado a forceRefreshNews() -->
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M23 4v6h-6M1 20v-6h6"/>
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-          </svg>
-          Reintentar
-        </button>
-      </div>
-    `;
+    newsContainer.innerHTML = '<p>Error al cargar las noticias. Inténtalo de nuevo más tarde.</p>';
   }
 };
 
@@ -239,10 +198,8 @@ const forceRefreshNews = async () => {
   
   try {
     // Mostrar estado de carga
-    if (refreshButton) {
-      refreshButton.classList.add('loading');
-      refreshButton.disabled = true;
-    }
+    refreshButton.classList.add('loading');
+    refreshButton.disabled = true;
     
     // Cambiar mensaje durante actualización
     newsContainer.innerHTML = '<p>Actualizando noticias...</p>';
@@ -251,18 +208,7 @@ const forceRefreshNews = async () => {
     await loadNews(true);
   } catch (error) {
     console.error('Error al actualizar:', error);
-    newsContainer.innerHTML = `
-      <div class="error-container">
-        <p class="error-message">Error al actualizar las noticias.</p>
-        <button class="retry-button" onclick="forceRefreshNews()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M23 4v6h-6M1 20v-6h6"/>
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-          </svg>
-          Reintentar
-        </button>
-      </div>
-    `;
+    newsContainer.innerHTML = '<p>Error al actualizar las noticias.</p>';
   } finally {
     if (refreshButton) {
       refreshButton.classList.remove('loading');
@@ -312,18 +258,7 @@ const loadAppNews = async () => {
     });
   } catch (error) {
     console.error('Error cargando noticias de la app:', error);
-    appNewsContainer.innerHTML = `
-      <div class="error-container">
-        <p class="error-message">Error al cargar las noticias de la app.</p>
-        <button class="retry-button" onclick="loadAppNews()">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M23 4v6h-6M1 20v-6h6"/>
-            <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"/>
-          </svg>
-          Reintentar
-        </button>
-      </div>
-    `;
+    appNewsContainer.innerHTML = '<p>Error al cargar las noticias de la app.</p>';
   }
 };
 
